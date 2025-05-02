@@ -407,69 +407,98 @@
         });
     </script>
 
-    <script>
-        $(document).ready(function () {
-            const $track = $('#carousel-track');
-            const $slides = $track.children();
-            const slideWidth = $slides.outerWidth(true);
-            let autoSlide;
+<script>
+    $(document).ready(function () {
+        const $track = $('#carousel-track');
+        const $slides = $track.children();
+        const slideWidth = $slides.outerWidth(true);
+        let autoSlide;
 
-            // Clone slides for seamless looping
-            $slides.clone().appendTo($track);
+        // Clone slides for seamless looping
+        $slides.clone().appendTo($track);
 
-            let position = 0;
+        let position = 0;
 
-            function moveNext() {
-                position++;
-                $track.css('transform', `translateX(${-position * slideWidth}px)`);
+        function moveNext() {
+            position++;
+            $track.css('transform', `translateX(${-position * slideWidth}px)`);
 
-                // Reset after half (since we cloned slides)
-                if (position >= $slides.length) {
-                    setTimeout(() => {
-                        $track.css('transition', 'none');
-                        position = 0;
-                        $track.css('transform', 'translateX(0)');
-                        // Re-enable transition
-                        setTimeout(() => {
-                            $track.css('transition', 'transform 0.7s ease-in-out');
-                        }, 50);
-                    }, 700);
-                }
-            }
-
-            function movePrev() {
-                if (position === 0) {
-                    // Jump to clone copy
+            // Reset after half (since we cloned slides)
+            if (position >= $slides.length) {
+                setTimeout(() => {
                     $track.css('transition', 'none');
-                    position = $slides.length;
-                    $track.css('transform', `translateX(${-position * slideWidth}px)`);
+                    position = 0;
+                    $track.css('transform', 'translateX(0)');
+                    // Re-enable transition
                     setTimeout(() => {
                         $track.css('transition', 'transform 0.7s ease-in-out');
-                        position--;
-                        $track.css('transform', `translateX(${-position * slideWidth}px)`);
                     }, 50);
-                } else {
+                }, 700);
+            }
+        }
+
+        function movePrev() {
+            if (position === 0) {
+                // Jump to clone copy
+                $track.css('transition', 'none');
+                position = $slides.length;
+                $track.css('transform', `translateX(${-position * slideWidth}px)`);
+                setTimeout(() => {
+                    $track.css('transition', 'transform 0.7s ease-in-out');
                     position--;
                     $track.css('transform', `translateX(${-position * slideWidth}px)`);
+                }, 50);
+            } else {
+                position--;
+                $track.css('transform', `translateX(${-position * slideWidth}px)`);
+            }
+        }
+
+        $('#next').click(moveNext);
+        $('#prev').click(movePrev);
+
+        function startAutoSlide() {
+            autoSlide = setInterval(moveNext, 4000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlide);
+        }
+
+        $('#carousel-wrapper').hover(stopAutoSlide, startAutoSlide);
+
+        startAutoSlide();
+
+        // ✅ Touch swipe support for touch devices only
+        if ('ontouchstart' in window || navigator.maxTouchPoints) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            const wrapper = document.getElementById('carousel-wrapper');
+
+            wrapper.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            wrapper.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleGesture();
+            });
+
+            function handleGesture() {
+                const swipeThreshold = 50; // minimum distance to consider as swipe
+
+                if (touchEndX < touchStartX - swipeThreshold) {
+                    moveNext(); // Swipe left
+                }
+                if (touchEndX > touchStartX + swipeThreshold) {
+                    movePrev(); // Swipe right
                 }
             }
+        }
+    });
+</script>
 
-            $('#next').click(moveNext);
-            $('#prev').click(movePrev);
-
-            function startAutoSlide() {
-                autoSlide = setInterval(moveNext, 4000);
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlide);
-            }
-
-            $('#carousel-wrapper').hover(stopAutoSlide, startAutoSlide);
-
-            startAutoSlide();
-        });
-    </script>
 
     <script>
         function animateOnScroll() {
