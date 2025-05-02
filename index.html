@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Community Link</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+</head>
+
+<body class="font-sans antialiased">
+
+    <!-- Navbar -->
+    <nav class="bg-white text-[#005A9C] shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo -->
+            <div class="text-2xl font-bold">
+                <img src="assets/images/logo.png" alt="One Community Link Logo" class="inline-block h-20">
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
+                <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
+                <a href="#about" class="hover:text-[#F7B32B] transition">About Us</a>
+                <a href="#services" class="hover:text-[#F7B32B] transition">Services</a>
+                <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
+                <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
+                <a href="#donate"
+                    class="ml-4 bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                    Donate
+                </a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-[#005A9C] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white text-[#005A9C]" style="display: none;">
+            <ul class="flex flex-col p-6 space-y-6 text-lg font-semibold">
+                <li><a href="#home" class="hover:text-[#F7B32B] transition">Home</a></li>
+                <li><a href="#about" class="hover:text-[#F7B32B] transition">About Us</a></li>
+                <li><a href="#services" class="hover:text-[#F7B32B] transition">Services</a></li>
+                <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                <li>
+                    <a href="#donate"
+                        class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                        Donate
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <section class="relative bg-[url('assets/images/ii.jpg')] bg-cover bg-center bg-no-repeat text-white pt-10 pb-10">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-[#003F73] bg-opacity-60"></div>
+
+        <div class="relative container mx-auto px-6 max-w-6xl text-center md:text-left">
+            <!-- Grid Layout for Hero Section -->
+            <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
+                <!-- Left Column: Heading, Subtext, Call to Action -->
+                <div class="md:col-span-1">
+                    <h1 class="text-3xl md:text-5xl font-semibold leading-tight mb-6">
+                        Empowering Communities,<br class="hidden md:inline"> Transforming Futures
+                    </h1>
+                    <p class="text-lg md:text-xl max-w-3xl mb-10">
+                        Building bridges between people and opportunities, fostering change through service, support,
+                        and connection.
+                        Together, we create a brighter tomorrow.
+                    </p>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center md:justify-start mb-12">
+                        <a href="#about"
+                            class="bg-[#F7B32B] text-[#003F73] px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 transition ease-in-out duration-300">
+                            Learn More
+                        </a>
+                        <a href="#donate"
+                            class="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#003F73] transition ease-in-out duration-300">
+                            Donate Now 💖
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Impact Box -->
+                <div class="md:col-span-1 md:ml-auto">
+                    <div
+                        class="bg-white bg-opacity-15 border border-white border-opacity-30 p-6 rounded-lg max-w-xl mx-auto md:mx-0">
+                        <h2 class="text-2xl font-semibold mb-2 text-white">Our Impact</h2>
+                        <p class="text-white text-lg mb-4">
+                            Over <span class="font-bold text-yellow-300">15,000 lives</span> impacted through education,
+                            community outreach, and volunteerism.
+                        </p>
+                        <a href="#impact"
+                            class="text-yellow-300 font-semibold hover:underline transition ease-in-out duration-300">
+                            See Stories of Change →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-white">
+        <div class="container mx-auto text-center">
+
+            <!-- Carousel Container -->
+            <div class="relative">
+                <div class="relative group overflow-hidden" id="carousel-wrapper">
+                    <div id="carousel-track" class="flex w-max transition-transform duration-700 ease-in-out">
+                        <!-- Carousel Images (repeat or duplicate for smoother looping) -->
+                        <div class="flex-shrink-0 w-full md:w-[300px] lg:w-[300px] mx-0">
+                            <img src="assets/images/slider/1.jpg" alt="1" class="w-full h-64 object-cover shadow-lg" />
+                        </div>
+                        <div class="flex-shrink-0 w-full md:w-[300px] lg:w-[300px] mx-0">
+                            <img src="assets/images/slider/2.jpg" alt="2" class="w-full h-64 object-cover shadow-lg" />
+                        </div>
+                        <div class="flex-shrink-0 w-full md:w-[300px] lg:w-[300px] mx-0">
+                            <img src="assets/images/slider/3.jpg" alt="3" class="w-full h-64 object-cover shadow-lg" />
+                        </div>
+                        <div class="flex-shrink-0 w-full md:w-[300px] lg:w-[300px] mx-0">
+                            <img src="assets/images/slider/4.jpg" alt="4" class="w-full h-64 object-cover shadow-lg" />
+                        </div>
+
+                    </div>
+
+                    <!-- Controls -->
+                    <button id="prev"
+                        class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full z-10 hover:bg-opacity-70">
+                        &#8592;
+                    </button>
+                    <button id="next"
+                        class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white bg-black bg-opacity-50 p-2 rounded-full z-10 hover:bg-opacity-70">
+                        &#8594;
+                    </button>
+                </div>
+            </div>
+    </section>
+
+
+
+
+
+    <section class="bg-[#005A9C] py-20 text-white relative z-10">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
+                Our Impact in Numbers
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+                <!-- Stat 1 -->
+                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://www.svgrepo.com/show/335242/people.svg" alt="People Icon"
+                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
+                    <p class="text-4xl font-bold text-[#F7B32B]">15,000+</p>
+                    <p class="text-lg">Lives Impacted</p>
+                </div>
+
+                <!-- Stat 2 -->
+                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://www.svgrepo.com/show/55708/open-hand.svg" alt="Volunteers Icon"
+                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
+                    <p class="text-4xl font-bold text-[#F7B32B]">1,200+</p>
+                    <p class="text-lg">Active Volunteers</p>
+                </div>
+
+                <!-- Stat 3 -->
+                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
+                    data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://www.svgrepo.com/show/310422/calendar-person.svg" alt="Projects Icon"
+                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
+                    <p class="text-4xl font-bold text-[#F7B32B]">80+</p>
+                    <p class="text-lg">Community Projects</p>
+                </div>
+
+                <!-- Stat 4 -->
+                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
+                    data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://www.svgrepo.com/show/35457/calendar-symbol.svg" alt="Calendar Icon"
+                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
+
+                    <p class="text-4xl font-bold text-[#F7B32B]">10+ yrs</p>
+                    <p class="text-lg">Serving Communities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-[#F4F6F8]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- Text Content -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#005A9C] mb-6">
+                        Who We Are
+                    </h2>
+                    <p class="text-gray-700 text-lg leading-relaxed">
+                        <span class="font-semibold text-[#005A9C]">One Community Link</span> is dedicated to uniting
+                        people across diverse
+                        backgrounds to create sustainable, inclusive, and thriving communities. We believe in the power
+                        of
+                        connection and collaboration to drive real and lasting change.
+                    </p>
+                    <p class="mt-4 text-gray-600 text-base leading-relaxed">
+                        Through education, outreach, and volunteerism, we empower individuals and strengthen
+                        neighborhoods,
+                        one story, one connection, one solution at a time.
+                    </p>
+                </div>
+
+                <!-- Optional Visual (Image or Icon) -->
+                <div class="flex justify-center md:justify-end">
+                    <img src="assets/images/slider/3.jpg" alt="Community illustration"
+                        class="shadow-lg w-full max-w-md object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-[#F4F6F8]">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#005A9C]">Our Focus Areas</h2>
+                <p class="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
+                    We are committed to creating strong, vibrant communities through focused and sustainable action.
+                </p>
+            </div>
+    
+            <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+                <!-- Card 1 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center">
+                    <div class="mb-5">
+                        <i class="fas fa-users text-3xl text-[#6BBE44]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#005A9C] mb-3">Community Development</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        We support local initiatives that empower and uplift communities through education, training, and essential resources.
+                    </p>
+                    <a href="#" class="mt-4 text-[#F7B32B] font-semibold hover:text-[#FF9800] transition">Learn More</a>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center">
+                    <div class="mb-5">
+                        <i class="fas fa-child text-3xl text-[#6BBE44]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#005A9C] mb-3">Youth Empowerment</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Building the leaders of tomorrow through mentorship, access to education, and meaningful engagement opportunities.
+                    </p>
+                    <a href="#" class="mt-4 text-[#F7B32B] font-semibold hover:text-[#FF9800] transition">Learn More</a>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="service-card bg-white p-8 rounded-lg shadow-md hover:shadow-xl transition duration-300 flex flex-col items-center text-center">
+                    <div class="mb-5">
+                        <i class="fas fa-heartbeat text-3xl text-[#6BBE44]"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-[#005A9C] mb-3">Health & Wellness</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Promoting physical and mental well-being with access to healthcare resources, education, and support systems.
+                    </p>
+                    <a href="#" class="mt-4 text-[#F7B32B] font-semibold hover:text-[#FF9800] transition">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+
+<!-- Volunteer Section with Background Image -->
+<section id="volunteer" class="relative py-24 bg-cover bg-center bg-no-repeat text-white text-center"
+    style="background-image: url('assets/images/slider/4.jpg');">
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-[#2E5C1F] bg-opacity-70 z-0"></div>
+
+    <div class="relative z-10 container mx-auto px-6 lg:px-8">
+        <!-- Title -->
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-white">
+            Become a Volunteer
+        </h2>
+        
+        <!-- Description Text -->
+        <p class="max-w-2xl mx-auto text-lg md:text-xl mb-8 leading-relaxed text-white">
+            Join hands with us to create a lasting impact on the lives of many. Your time, skills, and passion can make
+            a world of difference. Together, we can foster change in communities through dedication and collaboration.
+        </p>
+        
+        <!-- Call to Action Button -->
+        <a href="#contact"
+            class="inline-flex items-center justify-center px-8 py-3 bg-[#F7B32B] text-[#005A9C] font-semibold rounded-full hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
+            <!-- Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" stroke="currentColor"
+                viewBox="0 0 24 24" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 13h12"></path>
+            </svg>
+            Sign Up
+        </a>
+    </div>
+</section>
+
+
+
+
+<!-- Contact Section -->
+<section id="contact" class="relative bg-gray-100">
+    <!-- Google Map Full Width -->
+    <div class="w-full h-[500px] lg:h-[600px]">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_URL"
+        width="100%"
+        height="100%"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        class="w-full h-full"
+      ></iframe>
+    </div>
+  
+    <!-- Contact Info Overlay -->
+    <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] max-w-4xl bg-white bg-opacity-95 backdrop-blur-md rounded-xl shadow-xl p-8 md:p-10 z-10">
+      <h2 class="text-2xl md:text-3xl font-bold text-[#005A9C] mb-6 text-center">Get in Touch</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Address -->
+        <div class="flex items-start space-x-4">
+          <i class="fas fa-map-marker-alt text-[#005A9C] text-2xl mt-1"></i>
+          <div>
+            <p class="font-semibold text-lg">Address</p>
+            <p class="text-gray-700">1234 Street Name, City, Country</p>
+          </div>
+        </div>
+        <!-- Phone -->
+        <div class="flex items-start space-x-4">
+          <i class="fas fa-phone-alt text-[#005A9C] text-2xl mt-1"></i>
+          <div>
+            <p class="font-semibold text-lg">Phone</p>
+            <p class="text-gray-700">+123 456 7890</p>
+          </div>
+        </div>
+        <!-- Email -->
+        <div class="flex items-start space-x-4">
+          <i class="fas fa-envelope text-[#005A9C] text-2xl mt-1"></i>
+          <div>
+            <p class="font-semibold text-lg">Email</p>
+            <p class="text-gray-700">contact@domain.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+    <!-- Footer -->
+    <footer class="bg-[#005A9C] text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">&copy; 2025 One Community Link. All rights reserved.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="hover:text-[#F7B32B] transition">Privacy Policy</a>
+                <a href="#" class="hover:text-[#F7B32B] transition">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script>
+        $(document).ready(function () {
+            // Toggle with slide animation
+            $('#menu-toggle').click(function () {
+                $('#mobile-menu').slideToggle('fast');
+            });
+
+            // Hide mobile menu on resize to desktop
+            $(window).on('resize', function () {
+                if ($(window).width() >= 768) {
+                    $('#mobile-menu').hide(); // Use .hide() instead of class
+                }
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            const $track = $('#carousel-track');
+            const $slides = $track.children();
+            const slideWidth = $slides.outerWidth(true);
+            let autoSlide;
+
+            // Clone slides for seamless looping
+            $slides.clone().appendTo($track);
+
+            let position = 0;
+
+            function moveNext() {
+                position++;
+                $track.css('transform', `translateX(${-position * slideWidth}px)`);
+
+                // Reset after half (since we cloned slides)
+                if (position >= $slides.length) {
+                    setTimeout(() => {
+                        $track.css('transition', 'none');
+                        position = 0;
+                        $track.css('transform', 'translateX(0)');
+                        // Re-enable transition
+                        setTimeout(() => {
+                            $track.css('transition', 'transform 0.7s ease-in-out');
+                        }, 50);
+                    }, 700);
+                }
+            }
+
+            function movePrev() {
+                if (position === 0) {
+                    // Jump to clone copy
+                    $track.css('transition', 'none');
+                    position = $slides.length;
+                    $track.css('transform', `translateX(${-position * slideWidth}px)`);
+                    setTimeout(() => {
+                        $track.css('transition', 'transform 0.7s ease-in-out');
+                        position--;
+                        $track.css('transform', `translateX(${-position * slideWidth}px)`);
+                    }, 50);
+                } else {
+                    position--;
+                    $track.css('transform', `translateX(${-position * slideWidth}px)`);
+                }
+            }
+
+            $('#next').click(moveNext);
+            $('#prev').click(movePrev);
+
+            function startAutoSlide() {
+                autoSlide = setInterval(moveNext, 4000);
+            }
+
+            function stopAutoSlide() {
+                clearInterval(autoSlide);
+            }
+
+            $('#carousel-wrapper').hover(stopAutoSlide, startAutoSlide);
+
+            startAutoSlide();
+        });
+    </script>
+
+    <script>
+        function animateOnScroll() {
+            $('.service-card').each(function () {
+                const elemTop = $(this).offset().top;
+                const winBottom = $(window).scrollTop() + $(window).height();
+
+                if (winBottom > elemTop + 50) {
+                    $(this).addClass('opacity-100 translate-y-0');
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            animateOnScroll();
+            $(window).on('scroll resize', function () {
+                animateOnScroll();
+            });
+        });
+    </script>
+
+
+    <!-- Animate.css for smooth animation (optional, if you want) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</body>
+
+</html>
