@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Community Link</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
+                <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
+                <a href="#about" class="hover:text-[#F7B32B] transition">About Us</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group has-dropdown">
+                    <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
+                        <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
+                            Support</a>
+                        <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
+                            Access</a>
+                        <a href="#empowerment"
+                            class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
+                    </div>
+                </div>
+
+                <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
+                <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
+                <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
+                <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
+            </div>
+
+            <!-- Donate -->
+            <div class="hidden md:flex">
+                <a href="donate.html"
+                    class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                    Donate
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
+            <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
+                <li><a href="#home" class="hover:text-[#F7B32B] transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
+
+                <!-- Services Mobile Dropdown -->
+                <li class="has-dropdown">
+                    <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
+                        <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
+                        <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
+                        <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
+                <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
+                <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                <li>
+                    <a href="#donate"
+                        class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                        Donate
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!-- Combined Hero and Donation Section -->
+    <section class="relative w-full bg-cover bg-center"
+        style="background-image: url('assets/images/pexels-rdne-6647117.jpg');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="container mx-auto text-center sm:text-left relative z-10 px-4 py-16 sm:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
+                <!-- Hero Section (Left Column) -->
+                <div class="flex flex-col justify-center">
+                    <h1
+                        class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 animate__animated animate__fadeIn animate__delay-1s">
+                        Make a Difference Today
+                    </h1>
+                    <p
+                        class="text-lg sm:text-xl md:text-2xl text-white mb-8 animate__animated animate__fadeIn animate__delay-1.5s">
+                        Your support helps transform lives through education, healthcare, and community development.
+                        Every donation matters.
+                    </p>
+                    <a href="#donate-form"
+                        class="bg-[#F7B32B] text-white py-4 px-8 rounded-full font-semibold text-lg hover:bg-yellow-400 transition duration-300 shadow-md animate__animated animate__fadeIn animate__delay-2s">
+                        Donate Now
+                    </a>
+                </div>
+
+                <!-- Donation Form Section (Right Column) -->
+                <div id="donate-form"
+                    class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto animate__animated animate__fadeIn animate__delay-3s">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#2E7D32] mb-8">Support Our Mission</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Your generous donation helps us empower communities through education, healthcare, and
+                        sustainable initiatives. Join us in making a lasting impact.
+                    </p>
+
+                    <form id="donation-form" action="#" method="POST" class="space-y-6">
+                        <!-- Step 1: Select Donation Amount -->
+                        <div id="step-1" class="donation-step">
+                            <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Select Your Donation Amount</h3>
+                            <select id="donation-amount" name="donation_amount"
+                                class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]">
+                                <option value="10">$10</option>
+                                <option value="25">$25</option>
+                                <option value="50">$50</option>
+                                <option value="100">$100</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <button type="button"
+                                class="next-step bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md mt-6">Next</button>
+                        </div>
+
+                        <!-- Step 2: Personal Information -->
+                        <div id="step-2" class="donation-step hidden">
+                            <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Enter Your Details</h3>
+                            <div class="mb-6">
+                                <label for="donor-name" class="block text-lg font-semibold text-[#2E7D32] mb-2">Full
+                                    Name</label>
+                                <input type="text" id="donor-name" name="donor_name" required placeholder="Your Name"
+                                    class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]" />
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="donor-email" class="block text-lg font-semibold text-[#2E7D32] mb-2">Email
+                                    Address</label>
+                                <input type="email" id="donor-email" name="donor_email" required
+                                    placeholder="Your Email"
+                                    class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]" />
+                            </div>
+
+                            <div class="mb-6">
+                                <label for="donor-message"
+                                    class="block text-lg font-semibold text-[#2E7D32] mb-2">Message (Optional)</label>
+                                <textarea id="donor-message" name="donor_message" rows="4" placeholder="Your Message"
+                                    class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]"></textarea>
+                            </div>
+
+                            <button type="button"
+                                class="next-step bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md mt-6">Next</button>
+                        </div>
+
+                        <!-- Step 3: Confirmation -->
+                        <div id="step-3" class="donation-step hidden">
+                            <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Confirm Your Donation</h3>
+                            <p class="text-lg text-gray-600 mb-6">Thank you for your generosity! Please review your
+                                donation details and click "Donate Now" to proceed.</p>
+
+                            <div class="flex justify-center">
+                                <button type="submit"
+                                    class="bg-[#F7B32B] text-white py-3 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md">Donate
+                                    Now</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="bg-white py-20" id="blog-updates">
+        <div class="container mx-auto px-4">
+            <!-- Section Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2E7D32] mb-12">
+                Latest Blog Updates
+            </h2>
+
+            <!-- Blog Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="group bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="assets/images/slider/3.jpg" alt="Blog 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-[#F7B32B] font-semibold uppercase">Campaign</span>
+                        <h3
+                            class="text-xl font-semibold text-gray-800 mt-2 group-hover:text-[#2E7D32] transition duration-300">
+                            Empowering Youth Through Education
+                        </h3>
+                        <p class="text-gray-600 mt-2 text-sm">
+                            Discover how our latest initiative is providing tools, mentorship, and support to young
+                            people across the region.
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-[#2E7D32] font-semibold hover:underline">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div
+                    class="group bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="assets/images/slider/4.jpg" alt="Blog 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-[#F7B32B] font-semibold uppercase">Outreach</span>
+                        <h3
+                            class="text-xl font-semibold text-gray-800 mt-2 group-hover:text-[#2E7D32] transition duration-300">
+                            Reaching Underserved Communities
+                        </h3>
+                        <p class="text-gray-600 mt-2 text-sm">
+                            A behind-the-scenes look at our outreach efforts and how we're making a difference where it
+                            matters most.
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-[#2E7D32] font-semibold hover:underline">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="assets/images/slider/3.jpg" alt="Blog 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-[#F7B32B] font-semibold uppercase">Events</span>
+                        <h3
+                            class="text-xl font-semibold text-gray-800 mt-2 group-hover:text-[#2E7D32] transition duration-300">
+                            Highlights from Our Annual Summit
+                        </h3>
+                        <p class="text-gray-600 mt-2 text-sm">
+                            See key moments and outcomes from our recent summit focused on collaboration and sustainable
+                            growth.
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-[#2E7D32] font-semibold hover:underline">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="relative bg-gray-100">
+        <!-- Google Map -->
+        <div class="w-full h-[500px] lg:h-[400px]">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.928830826039!2d-1.3066408!3d54.57000600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e92e8acc28351%3A0x21f5aeb136eef38a!2sRhema%20House!5e0!3m2!1sen!2sng!4v1746551464524!5m2!1sen!2sng"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                class="w-full h-full"></iframe>
+        </div>
+
+        <!-- Overlay Contact Info -->
+        <div
+            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[92%] max-w-5xl bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-10 z-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#2E7D32] mb-6 text-center">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-800">
+                <!-- Address -->
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-map-marker-alt text-[#2E7D32] text-2xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-lg">Address</p>
+                        <p>Rhema House, 2 Portrack Lane<br>Stockton-on-Tees, TS18 2HG<br>United Kingdom</p>
+                    </div>
+                </div>
+                <!-- Phone -->
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-phone-alt text-[#2E7D32] text-2xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-lg">Phone</p>
+                        <a href="tel:+447863240016" class="hover:underline block">+44 7863 240016</a>
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-envelope text-[#2E7D32] text-2xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-lg">Email</p>
+                        <a href="mailto:info@onecommunitylink.org"
+                            class="hover:underline block">info@onecommunitylink.org</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Add some custom JS for the donation wizard functionality -->
+    <script>
+        let currentStep = 1;
+        const steps = document.querySelectorAll('.donation-step');
+
+        function showStep(step) {
+            steps.forEach((el, index) => {
+                if (index === step - 1) {
+                    el.classList.remove('hidden');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+        }
+
+        document.querySelectorAll('.next-step').forEach(button => {
+            button.addEventListener('click', () => {
+                if (currentStep < steps.length) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            });
+        });
+
+        showStep(currentStep); // Initialize by showing the first step
+    </script>
+
+
+
+    <footer class="bg-[#1B5E20] text-white pt-16 pb-8 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- About -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About Us</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        One Community Link empowers people by connecting them with education, support, and opportunity.
+                        Our mission is to build brighter futures—together.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#about" class="hover:text-[#F7B32B] transition">About</a></li>
+                        <li><a href="#impact" class="hover:text-[#F7B32B] transition">Impact</a></li>
+                        <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                        <li><a href="#donate" class="hover:text-[#F7B32B] transition">Donate</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fas fa-phone-alt mr-2 text-[#F7B32B]"></i> <a href="tel:+447863240016">+44 7863
+                                240016</a></li>
+                        <li><i class="fas fa-envelope mr-2 text-[#F7B32B]"></i> <a
+                                href="mailto:info@onecommunitylink.org">info@onecommunitylink.org</a></li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-[#F7B32B]"></i> Rhema House, Stockton-on-Tees</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/20 mt-10 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 One Community Link. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="hover:text-[#F7B32B] transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#F7B32B] transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="app.js"></script>
+
+
+    <!-- Animate.css for smooth animation (optional, if you want) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</body>
+
+</html>
