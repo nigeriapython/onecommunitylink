@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    
+
     // === MOBILE MENU TOGGLE ===
     $('#menu-toggle').on('click', function () {
         $('#mobile-menu').slideToggle('fast');
@@ -166,4 +168,26 @@ $(document).ready(function () {
 
     typeWriter();
 
+
+
+    function equalizeSides() {
+        const $left = $('.side.left');
+        const $right = $('.side.right');
+
+        // Reset height to auto before recalculating
+        $left.height('auto');
+        $right.height('auto');
+
+        const maxHeight = Math.max($left.outerHeight(), $right.outerHeight());
+
+        $left.height(maxHeight);
+        $right.height(maxHeight);
+    }
+
+    // Run on load and resize
+    equalizeSides();
+    $(window).on('resize', equalizeSides);
+
+
+    
 });

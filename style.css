@@ -62,3 +62,17 @@
     white-space: pre-wrap;
     /* preserve line breaks */
 }
+
+
+
+.row {
+    display: flex;
+    align-items: stretch;
+  }
+  
+  .side {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  

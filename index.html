@@ -23,6 +23,9 @@
     <link rel="stylesheet" href="style.css">
 
 
+
+
+
 </head>
 
 <body class="font-sans antialiased">
@@ -122,22 +125,23 @@
     </nav>
 
 
-
     <section
         class="relative bg-[url('assets/images/ii.jpg')] bg-cover bg-center bg-no-repeat text-white py-16 overflow-hidden">
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/70 backdrop-blur-sm z-0"></div>
 
         <!-- Content Container -->
-        <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div class="relative z-10 container mx-auto px-2 sm:px-6 lg:px-8 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-2 items-stretch">
 
                 <!-- Left Column -->
                 <div
-                    class="flex flex-col space-y-6 animate-fade-in-down text-center md:text-left items-center md:items-start">
-                    <!-- Typewriter Heading -->
-                    <h1 id="headline"
-                        class="text-green-400 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"></h1>
+                    class="flex flex-col justify-center space-y-6 animate-fade-in-down text-center md:text-left items-center md:items-start h-full">
+
+                    <h4 id="headline"
+                        class="text-green-400 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"><span
+                            class="font-semibold text-[#22C55E]">One Community Link</span> </h4>
+
 
                     <p class="text-base sm:text-lg lg:text-xl max-w-xl text-white/90">
                         Building bridges between people and opportunities. Fostering change through support, education,
@@ -145,24 +149,22 @@
                     </p>
 
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 pt-4">
+                    <div class="flex flex-row flex-wrap justify-center sm:justify-start gap-4 pt-4">
                         <a href="#about"
-                            class="w-full sm:w-auto bg-[#F7B32B] text-[#003F73] px-6 py-3 rounded-full font-semibold text-center hover:bg-yellow-400 transition duration-300 shadow-md hover:scale-105">
+                            class="bg-[#F7B32B] text-[#003F73] px-6 py-3 rounded-full font-semibold text-center hover:bg-yellow-400 transition duration-300 shadow-md hover:scale-105">
                             Learn More
                         </a>
                         <a href="#donate"
-                            class="w-full sm:w-auto border border-white text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-white hover:text-[#003F73] transition duration-300 shadow-md hover:scale-105">
+                            class="border border-white text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-white hover:text-[#003F73] transition duration-300 shadow-md hover:scale-105">
                             Donate Now 💖
                         </a>
                     </div>
-
                 </div>
 
-
                 <!-- Right Column (Impact Card) -->
-                <div class="animate-fade-in-up">
+                <div class="flex items-center justify-center animate-fade-in-up h-full">
                     <div
-                        class="bg-white/10 border border-white/30 p-6 sm:p-8 rounded-2xl backdrop-blur-md shadow-lg max-w-md mx-auto">
+                        class="bg-white/10 border border-white/30 p-5 sm:p-8 rounded-2xl backdrop-blur-md shadow-lg w-full max-w-md">
                         <h2 class="text-xl sm:text-2xl font-bold mb-3 text-white">🌍 Our Impact</h2>
                         <p class="text-white text-base sm:text-lg mb-4 leading-relaxed">
                             Over <span id="impact-counter" class="text-yellow-300 font-extrabold text-3xl">0</span>
@@ -178,9 +180,6 @@
             </div>
         </div>
     </section>
-
-
-
 
 
     <section class="bg-white">
@@ -238,68 +237,17 @@
     </section>
 
 
-
-    <section class="bg-[#2E7D32] py-20 text-white relative z-10">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
-                Our Impact in Numbers
-            </h2>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 text-center">
-                <!-- Stat 1 -->
-                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
-                    data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://www.svgrepo.com/show/335242/people.svg" alt="People Icon"
-                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
-                    <p class="text-4xl font-bold text-[#F7B32B]">15,000+</p>
-                    <p class="text-lg">Lives Impacted</p>
-                </div>
-
-                <!-- Stat 2 -->
-                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
-                    data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://www.svgrepo.com/show/55708/open-hand.svg" alt="Volunteers Icon"
-                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
-                    <p class="text-4xl font-bold text-[#F7B32B]">1,200+</p>
-                    <p class="text-lg">Active Volunteers</p>
-                </div>
-
-                <!-- Stat 3 -->
-                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
-                    data-aos="fade-up" data-aos-delay="300">
-                    <img src="https://www.svgrepo.com/show/310422/calendar-person.svg" alt="Projects Icon"
-                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
-                    <p class="text-4xl font-bold text-[#F7B32B]">80+</p>
-                    <p class="text-lg">Community Projects</p>
-                </div>
-
-                <!-- Stat 4 -->
-                <div class="flex flex-col items-center transform transition duration-300 hover:scale-105"
-                    data-aos="fade-up" data-aos-delay="400">
-                    <img src="https://www.svgrepo.com/show/35457/calendar-symbol.svg" alt="Calendar Icon"
-                        class="w-12 h-12 mb-4 transition duration-300 hover:drop-shadow-[0_0_8px_#F7B32B]">
-
-                    <p class="text-4xl font-bold text-[#F7B32B]">10+ yrs</p>
-                    <p class="text-lg">Serving Communities</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
     <!-- About Section -->
     <section id="about" class="py-24 bg-[#F4F6F8]">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <!-- Text Content -->
                 <div>
-                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#005A9C] mb-6">
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-[#2E7D32] mb-6">
                         Who We Are
                     </h2>
                     <p class="text-gray-700 text-lg leading-relaxed">
-                        <span class="font-semibold text-[#005A9C]">One Community Link</span> is dedicated to uniting
+                        <span class="font-semibold text-[#2E7D32]">One Community Link</span> is dedicated to uniting
                         people across diverse
                         backgrounds to create sustainable, inclusive, and thriving communities. We believe in the power
                         of
@@ -321,12 +269,67 @@
         </div>
     </section>
 
+    <section class="relative bg-cover bg-center py-20 text-white"
+        style="background-image: url('assets/images/3dd3dc_f5a9c71154be44c3aaf2275d3b30e7e4_mv2.jpg')">
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-green-800 to-green-900 opacity-60"></div>
+
+        <!-- Content Container -->
+        <div class="relative container mx-auto px-6 max-w-7xl z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Stats Grid -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-10 text-white shadow">
+                        Our Impact in Numbers
+                    </h2>
+                    <div class="grid grid-cols-2 gap-8">
+                        <!-- Stat 1 -->
+                        <div>
+                            <p class="text-4xl font-extrabold text-[#F7B32B]">15,000+</p>
+                            <p class="text-lg text-gray-200">Lives Impacted</p>
+                        </div>
+                        <!-- Stat 2 -->
+                        <div>
+                            <p class="text-4xl font-extrabold text-[#F7B32B]">1,200+</p>
+                            <p class="text-lg text-gray-200">Active Volunteers</p>
+                        </div>
+                        <!-- Stat 3 -->
+                        <div>
+                            <p class="text-4xl font-extrabold text-[#F7B32B]">80+</p>
+                            <p class="text-lg text-gray-200">Community Projects</p>
+                        </div>
+                        <!-- Stat 4 -->
+                        <div>
+                            <p class="text-4xl font-extrabold text-[#F7B32B]">10+ yrs</p>
+                            <p class="text-lg text-gray-200">Serving Communities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Highlight Box -->
+                <div class="bg-white/10 border border-white/20 backdrop-blur-sm rounded-lg p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold mb-4 text-[#F7B32B]">
+                        Every number tells a story
+                    </h3>
+                    <p class="text-white/90 mb-6 text-lg">
+                        From rural outreaches to educational programs and healthcare support, One Community Link has
+                        been making a measurable difference for over a decade. We are powered by people — just like you.
+                    </p>
+                    <a href="#stories"
+                        class="inline-block bg-[#F7B32B] text-[#003F73] px-6 py-3 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md hover:scale-105">
+                        See Our Stories →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Services Section -->
     <section id="services" class="py-24 bg-[#F4F6F8]">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-extrabold text-[#005A9C]">Our Focus Areas</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold text-[#2E7D32]">Our Focus Areas</h2>
                 <p class="text-gray-600 text-lg mt-4 max-w-2xl mx-auto">
                     We are committed to creating strong, vibrant communities through focused and sustainable action.
                 </p>
@@ -339,7 +342,7 @@
                     <div class="mb-5">
                         <i class="fas fa-users text-3xl text-[#6BBE44]"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#005A9C] mb-3">Community Development</h3>
+                    <h3 class="text-xl font-bold text-[#2E7D32] mb-3">Community Development</h3>
                     <p class="text-gray-600 text-base leading-relaxed">
                         We support local initiatives that empower and uplift communities through education, training,
                         and essential resources.
@@ -353,7 +356,7 @@
                     <div class="mb-5">
                         <i class="fas fa-child text-3xl text-[#6BBE44]"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#005A9C] mb-3">Youth Empowerment</h3>
+                    <h3 class="text-xl font-bold text-[#2E7D32] mb-3">Youth Empowerment</h3>
                     <p class="text-gray-600 text-base leading-relaxed">
                         Building the leaders of tomorrow through mentorship, access to education, and meaningful
                         engagement opportunities.
@@ -367,7 +370,7 @@
                     <div class="mb-5">
                         <i class="fas fa-heartbeat text-3xl text-[#6BBE44]"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-[#005A9C] mb-3">Health & Wellness</h3>
+                    <h3 class="text-xl font-bold text-[#2E7D32] mb-3">Health & Wellness</h3>
                     <p class="text-gray-600 text-base leading-relaxed">
                         Promoting physical and mental well-being with access to healthcare resources, education, and
                         support systems.
@@ -381,147 +384,257 @@
 
 
 
-    <!-- Volunteer Section with Background Image -->
-    <section id="volunteer" class="relative py-24 bg-cover bg-center bg-no-repeat text-white text-center"
-        style="background-image: url('assets/images/slider/4.jpg');">
-
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-[#2E5C1F] bg-opacity-70 z-0"></div>
+    <section class="relative bg-[#000000] py-24">
+        <!-- Background image overlayed only on the left -->
+        <div class="absolute inset-0 bg-cover bg-left-top bg-no-repeat"
+            style="background-image: url('assets/images/slider/4.jpg'); opacity: 0.15;"></div>
 
         <div class="relative z-10 container mx-auto px-6 lg:px-8">
-            <!-- Title -->
-            <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold mb-6 text-white">
-                Become a Volunteer
-            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <!-- Left: Volunteer Call -->
+                <div class="bg-[#2E5C1F] bg-opacity-90 text-white rounded-xl p-10">
+                    <h2 class="text-3xl md:text-4xl font-semibold mb-6">Become a Volunteer</h2>
+                    <p class="text-lg md:text-xl mb-8 leading-relaxed">
+                        Join hands with us to create a lasting impact on the lives of many. Your time, skills, and
+                        passion can make a world of difference.
+                    </p>
+                    <a href="#contact"
+                        class="inline-flex items-center justify-center px-8 py-3 bg-[#F7B32B] text-[#005A9C] font-semibold rounded-full hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 13h12"></path>
+                        </svg>
+                        Sign Up
+                    </a>
+                </div>
 
-            <!-- Description Text -->
-            <p class="max-w-2xl mx-auto text-lg md:text-xl mb-8 leading-relaxed text-white">
-                Join hands with us to create a lasting impact on the lives of many. Your time, skills, and passion can
-                make
-                a world of difference. Together, we can foster change in communities through dedication and
-                collaboration.
-            </p>
+                <!-- Right: Testimonials Carousel -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#2E7D32] mb-10 text-center md:text-left">What People
+                        Are Saying</h2>
 
-            <!-- Call to Action Button -->
-            <a href="#contact"
-                class="inline-flex items-center justify-center px-8 py-3 bg-[#F7B32B] text-[#005A9C] font-semibold rounded-full hover:bg-yellow-400 transition duration-300 ease-in-out transform hover:scale-105">
-                <!-- Icon -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 mr-3" fill="none" stroke="currentColor"
-                    viewBox="0 0 24 24" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 13h12"></path>
-                </svg>
-                Sign Up
-            </a>
+                    <div class="swiper max-w-xl mx-auto md:mx-0">
+                        <div class="swiper-wrapper">
+                            <!-- Testimonial 1 -->
+                            <div class="swiper-slide bg-white p-8 rounded-xl shadow-md text-center">
+                                <p class="text-gray-700 text-lg italic mb-4">
+                                    "One Community Link provided the support we needed to empower women in our local
+                                    community."
+                                </p>
+                                <h4 class="font-semibold text-[#2E7D32]">Aisha Bello</h4>
+                                <span class="text-gray-500 text-sm">Community Leader</span>
+                            </div>
+
+                            <!-- Testimonial 2 -->
+                            <div class="swiper-slide bg-white p-8 rounded-xl shadow-md text-center">
+                                <p class="text-gray-700 text-lg italic mb-4">
+                                    "I volunteered for one of their outreach programs, and it was one of the best
+                                    experiences of my life."
+                                </p>
+                                <h4 class="font-semibold text-[#2E7D32]">John Okafor</h4>
+                                <span class="text-gray-500 text-sm">Volunteer</span>
+                            </div>
+
+                            <!-- Testimonial 3 -->
+                            <div class="swiper-slide bg-white p-8 rounded-xl shadow-md text-center">
+                                <p class="text-gray-700 text-lg italic mb-4">
+                                    "Thanks to their scholarship drive, I was able to continue my education."
+                                </p>
+                                <h4 class="font-semibold text-[#2E7D32]">Chiamaka Nwosu</h4>
+                                <span class="text-gray-500 text-sm">Student</span>
+                            </div>
+                        </div>
+
+                        <!-- Swiper Pagination -->
+                        <div class="swiper-pagination mt-6"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-
-
-    <section id="testimonials" class="bg-[#f7fafc] py-16">
+    <section class="bg-white py-20" id="blog-updates">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2E7D32] mb-10">What People Are Saying</h2>
+            <!-- Section Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2E7D32] mb-12">
+                Latest Blog Updates
+            </h2>
 
-            <div class="swiper max-w-4xl mx-auto">
-                <div class="swiper-wrapper">
-                    <!-- Testimonial 1 -->
-                    <div class="swiper-slide bg-white p-8 rounded-xl shadow-lg text-center">
-                        <p class="text-gray-700 text-lg italic mb-4">
-                            "One Community Link provided the support we needed to empower women in our local community."
+            <!-- Blog Cards -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div
+                    class="group bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="assets/images/slider/3.jpg" alt="Blog 1" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-[#F7B32B] font-semibold uppercase">Campaign</span>
+                        <h3
+                            class="text-xl font-semibold text-gray-800 mt-2 group-hover:text-[#2E7D32] transition duration-300">
+                            Empowering Youth Through Education
+                        </h3>
+                        <p class="text-gray-600 mt-2 text-sm">
+                            Discover how our latest initiative is providing tools, mentorship, and support to young
+                            people across the region.
                         </p>
-                        <h4 class="font-semibold text-[#2E7D32]">Aisha Bello</h4>
-                        <span class="text-gray-500 text-sm">Community Leader</span>
-                    </div>
-
-                    <!-- Testimonial 2 -->
-                    <div class="swiper-slide bg-white p-8 rounded-xl shadow-lg text-center">
-                        <p class="text-gray-700 text-lg italic mb-4">
-                            "I volunteered for one of their outreach programs, and it was one of the best experiences of
-                            my life."
-                        </p>
-                        <h4 class="font-semibold text-[#2E7D32]">John Okafor</h4>
-                        <span class="text-gray-500 text-sm">Volunteer</span>
-                    </div>
-
-                    <!-- Testimonial 3 -->
-                    <div class="swiper-slide bg-white p-8 rounded-xl shadow-lg text-center">
-                        <p class="text-gray-700 text-lg italic mb-4">
-                            "Thanks to their scholarship drive, I was able to continue my education."
-                        </p>
-                        <h4 class="font-semibold text-[#2E7D32]">Chiamaka Nwosu</h4>
-                        <span class="text-gray-500 text-sm">Student</span>
+                        <a href="#" class="inline-block mt-4 text-[#2E7D32] font-semibold hover:underline">
+                            Read More →
+                        </a>
                     </div>
                 </div>
 
-                <!-- Pagination -->
-                <div class="swiper-pagination mt-6"></div>
+                <!-- Card 2 -->
+                <div
+                    class="group bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="assets/images/slider/4.jpg" alt="Blog 2" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-[#F7B32B] font-semibold uppercase">Outreach</span>
+                        <h3
+                            class="text-xl font-semibold text-gray-800 mt-2 group-hover:text-[#2E7D32] transition duration-300">
+                            Reaching Underserved Communities
+                        </h3>
+                        <p class="text-gray-600 mt-2 text-sm">
+                            A behind-the-scenes look at our outreach efforts and how we're making a difference where it
+                            matters most.
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-[#2E7D32] font-semibold hover:underline">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div
+                    class="group bg-white rounded-xl shadow-md overflow-hidden transform transition duration-300 hover:shadow-xl hover:scale-105">
+                    <img src="assets/images/slider/3.jpg" alt="Blog 3" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <span class="text-sm text-[#F7B32B] font-semibold uppercase">Events</span>
+                        <h3
+                            class="text-xl font-semibold text-gray-800 mt-2 group-hover:text-[#2E7D32] transition duration-300">
+                            Highlights from Our Annual Summit
+                        </h3>
+                        <p class="text-gray-600 mt-2 text-sm">
+                            See key moments and outcomes from our recent summit focused on collaboration and sustainable
+                            growth.
+                        </p>
+                        <a href="#" class="inline-block mt-4 text-[#2E7D32] font-semibold hover:underline">
+                            Read More →
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
 
     <!-- Contact Section -->
+
     <section id="contact" class="relative bg-gray-100">
-        <!-- Google Map Full Width -->
-        <div class="w-full h-[500px] lg:h-[600px]">
+        <!-- Google Map -->
+        <div class="w-full h-[500px] lg:h-[400px]">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.928830826039!2d-1.3066408!3d54.57000600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e92e8acc28351%3A0x21f5aeb136eef38a!2sRhema%20House!5e0!3m2!1sen!2sng!4v1746551464524!5m2!1sen!2sng"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
                 class="w-full h-full"></iframe>
-
         </div>
 
-        <!-- Contact Info Overlay -->
+        <!-- Overlay Contact Info -->
         <div
-            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[90%] max-w-4xl bg-white bg-opacity-95 backdrop-blur-md rounded-xl shadow-xl p-8 md:p-10 z-10">
-            <h2 class="text-2xl md:text-3xl font-bold text-[#005A9C] mb-6 text-center">Get in Touch</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[92%] max-w-5xl bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-10 z-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#2E7D32] mb-6 text-center">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-800">
                 <!-- Address -->
-                <div class="flex items-start space-x-4">
-                    <i class="fas fa-map-marker-alt text-[#005A9C] text-2xl mt-1"></i>
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-map-marker-alt text-[#2E7D32] text-2xl mt-1"></i>
                     <div>
                         <p class="font-semibold text-lg">Address</p>
-                        <p class="text-gray-700">
-                            Rhema House, 2 Portrack Lane<br>
-                            Stockton-on-Tees, TS18 2HG<br>
-                            United Kingdom
-                        </p>
+                        <p>Rhema House, 2 Portrack Lane<br>Stockton-on-Tees, TS18 2HG<br>United Kingdom</p>
                     </div>
                 </div>
                 <!-- Phone -->
-                <div class="flex items-start space-x-4">
-                    <i class="fas fa-phone-alt text-[#005A9C] text-2xl mt-1"></i>
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-phone-alt text-[#2E7D32] text-2xl mt-1"></i>
                     <div>
                         <p class="font-semibold text-lg">Phone</p>
-                        <p class="text-gray-700"><a href="tel:+447863240016" class="hover:underline">+44 7863 240016</a>
-                        </p>
+                        <a href="tel:+447863240016" class="hover:underline block">+44 7863 240016</a>
                     </div>
                 </div>
                 <!-- Email -->
-                <div class="flex items-start space-x-4">
-                    <i class="fas fa-envelope text-[#005A9C] text-2xl mt-1"></i>
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-envelope text-[#2E7D32] text-2xl mt-1"></i>
                     <div>
                         <p class="font-semibold text-lg">Email</p>
-                        <p class="text-gray-700"><a href="mailto:info@onecommunitylink.org"
-                                class="hover:underline">info@onecommunitylink.org</a></p>
+                        <a href="mailto:info@onecommunitylink.org"
+                            class="hover:underline block">info@onecommunitylink.org</a>
                     </div>
                 </div>
             </div>
         </div>
-
     </section>
 
 
 
-    <!-- Footer -->
-    <footer class="bg-[#2E7D32] text-white py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p class="mb-4">&copy; 2025 One Community Link. All rights reserved.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="hover:text-[#F7B32B] transition">Privacy Policy</a>
-                <a href="#" class="hover:text-[#F7B32B] transition">Terms of Service</a>
+
+    <footer class="bg-[#2E7D32] text-white pt-16 pb-10 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-sm">
+
+                <!-- About -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">About Us</h4>
+                    <p class="text-gray-300">
+                        One Community Link is dedicated to empowering communities through sustainable initiatives,
+                        education, and outreach.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="hover:text-[#F7B32B] transition">About</a></li>
+                        <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                        <li><a href="#campaigns" class="hover:text-[#F7B32B] transition">Campaigns</a></li>
+                        <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 text-xl">
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-300 mb-3">Subscribe for updates and community stories.</p>
+                    <form class="flex items-center space-x-2">
+                        <input type="email" placeholder="Your email"
+                            class="w-full px-3 py-2 rounded-md text-gray-900 focus:outline-none" required>
+                        <button type="submit"
+                            class="bg-[#F7B32B] text-[#2E7D32] px-4 py-2 rounded-md font-semibold hover:bg-yellow-400 transition">
+                            Subscribe
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Bottom Text -->
+            <div class="mt-12 border-t border-green-700 pt-6 text-center text-gray-300 text-sm">
+                &copy; 2025 One Community Link. All rights reserved.
+                <div class="mt-3 space-x-4">
+                    <a href="#" class="hover:text-[#F7B32B] transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#F7B32B] transition">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
+
 
 
     <script src="app.js"></script>
