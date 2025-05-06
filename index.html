@@ -12,50 +12,104 @@
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+
 
 </head>
 
 <body class="font-sans antialiased">
-
     <!-- Navbar -->
-    <nav class="bg-white text-[#005A9C] shadow-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+
             <!-- Logo -->
-            <div class="text-2xl font-bold">
-                <img src="assets/images/logo.png" alt="One Community Link Logo" class="inline-block h-20">
+            <div class="flex-shrink-0">
+                <a href="#home">
+                    <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+                </a>
             </div>
 
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8 text-lg font-semibold">
+            <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
                 <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
                 <a href="#about" class="hover:text-[#F7B32B] transition">About Us</a>
-                <a href="#services" class="hover:text-[#F7B32B] transition">Services</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group has-dropdown">
+                    <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
+                        <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
+                            Support</a>
+                        <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
+                            Access</a>
+                        <a href="#empowerment"
+                            class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
+                    </div>
+                </div>
+
                 <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
+                <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
+                <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
                 <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
+            </div>
+
+            <!-- Donate -->
+            <div class="hidden md:flex">
                 <a href="#donate"
-                    class="ml-4 bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                    class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
                     Donate
                 </a>
             </div>
 
-            <!-- Mobile Toggle -->
+            <!-- Mobile Menu Toggle -->
             <div class="md:hidden">
-                <button id="menu-toggle" class="text-[#005A9C] focus:outline-none">
+                <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                            d="M4 6h16M4 12h16m-7 6h7" />
                     </svg>
                 </button>
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden bg-white text-[#005A9C]" style="display: none;">
-            <ul class="flex flex-col p-6 space-y-6 text-lg font-semibold">
+        <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
+            <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
                 <li><a href="#home" class="hover:text-[#F7B32B] transition">Home</a></li>
                 <li><a href="#about" class="hover:text-[#F7B32B] transition">About Us</a></li>
-                <li><a href="#services" class="hover:text-[#F7B32B] transition">Services</a></li>
+
+                <!-- Services Mobile Dropdown -->
+                <li class="has-dropdown">
+                    <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
+                        <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
+                        <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
+                        <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
+                <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
                 <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
                 <li>
                     <a href="#donate"
@@ -68,63 +122,72 @@
     </nav>
 
 
-    <section class="relative bg-[url('assets/images/ii.jpg')] bg-cover bg-center bg-no-repeat text-white pt-10 pb-10">
-        <!-- Overlay -->
-        <div class="absolute inset-0 bg-[#003F73] bg-opacity-60"></div>
 
-        <div class="relative container mx-auto px-6 max-w-6xl text-center md:text-left">
-            <!-- Grid Layout for Hero Section -->
-            <div class="md:grid md:grid-cols-2 md:gap-12 items-center">
-                <!-- Left Column: Heading, Subtext, Call to Action -->
-                <div class="md:col-span-1">
-                    <h1 class="text-3xl md:text-5xl font-semibold leading-tight mb-6">
-                        Empowering Communities,<br class="hidden md:inline"> Transforming Futures
-                    </h1>
-                    <p class="text-lg md:text-xl max-w-3xl mb-10">
-                        Building bridges between people and opportunities, fostering change through service, support,
-                        and connection.
-                        Together, we create a brighter tomorrow.
+    <section
+        class="relative bg-[url('assets/images/ii.jpg')] bg-cover bg-center bg-no-repeat text-white py-16 overflow-hidden">
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm z-0"></div>
+
+        <!-- Content Container -->
+        <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Column -->
+                <div
+                    class="flex flex-col space-y-6 animate-fade-in-down text-center md:text-left items-center md:items-start">
+                    <!-- Typewriter Heading -->
+                    <h1 id="headline"
+                        class="text-green-400 text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight"></h1>
+
+                    <p class="text-base sm:text-lg lg:text-xl max-w-xl text-white/90">
+                        Building bridges between people and opportunities. Fostering change through support, education,
+                        and connection. Together, we create a brighter tomorrow.
                     </p>
 
-                    <!-- Call to Action Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-6 justify-center md:justify-start mb-12">
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 pt-4">
                         <a href="#about"
-                            class="bg-[#F7B32B] text-[#003F73] px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 transition ease-in-out duration-300">
+                            class="w-full sm:w-auto bg-[#F7B32B] text-[#003F73] px-6 py-3 rounded-full font-semibold text-center hover:bg-yellow-400 transition duration-300 shadow-md hover:scale-105">
                             Learn More
                         </a>
                         <a href="#donate"
-                            class="border border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-[#003F73] transition ease-in-out duration-300">
+                            class="w-full sm:w-auto border border-white text-white px-6 py-3 rounded-full font-semibold text-center hover:bg-white hover:text-[#003F73] transition duration-300 shadow-md hover:scale-105">
                             Donate Now 💖
                         </a>
                     </div>
+
                 </div>
 
-                <!-- Right Column: Impact Box -->
-                <div class="md:col-span-1 md:ml-auto">
+
+                <!-- Right Column (Impact Card) -->
+                <div class="animate-fade-in-up">
                     <div
-                        class="bg-white bg-opacity-15 border border-white border-opacity-30 p-6 rounded-lg max-w-xl mx-auto md:mx-0">
-                        <h2 class="text-2xl font-semibold mb-2 text-white">Our Impact</h2>
-                        <p class="text-white text-lg mb-4">
-                            Over <span class="font-bold text-yellow-300">15,000 lives</span> impacted through education,
-                            community outreach, and volunteerism.
+                        class="bg-white/10 border border-white/30 p-6 sm:p-8 rounded-2xl backdrop-blur-md shadow-lg max-w-md mx-auto">
+                        <h2 class="text-xl sm:text-2xl font-bold mb-3 text-white">🌍 Our Impact</h2>
+                        <p class="text-white text-base sm:text-lg mb-4 leading-relaxed">
+                            Over <span id="impact-counter" class="text-yellow-300 font-extrabold text-3xl">0</span>
+                            lives impacted
+                            through education, outreach, and volunteerism.
                         </p>
-                        <a href="#impact"
-                            class="text-yellow-300 font-semibold hover:underline transition ease-in-out duration-300">
+                        <a href="#impact" class="text-yellow-300 font-semibold hover:underline">
                             See Stories of Change →
                         </a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
 
 
 
+
+
     <section class="bg-white">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="mx-auto px-1 sm:px-6 lg:px-1 text-center">
 
             <!-- Carousel Container -->
-            <div class="relative">
+            <div class="relative w-full">
                 <div class="relative group overflow-hidden" id="carousel-wrapper">
                     <div id="carousel-track" class="flex transition-transform duration-700 ease-in-out">
 
@@ -133,6 +196,19 @@
                             <img src="assets/images/slider/1.jpg" alt="1"
                                 class="w-full h-48 sm:h-64 object-cover shadow-lg" />
                         </div>
+                        <div class="flex-shrink-0 w-full sm:w-[80%] md:w-[300px] mx-auto sm:mx-2">
+                            <img src="assets/images/slider/2.jpg" alt="2"
+                                class="w-full h-48 sm:h-64 object-cover shadow-lg" />
+                        </div>
+                        <div class="flex-shrink-0 w-full sm:w-[80%] md:w-[300px] mx-auto sm:mx-2">
+                            <img src="assets/images/slider/3.jpg" alt="3"
+                                class="w-full h-48 sm:h-64 object-cover shadow-lg" />
+                        </div>
+                        <div class="flex-shrink-0 w-full sm:w-[80%] md:w-[300px] mx-auto sm:mx-2">
+                            <img src="assets/images/slider/4.jpg" alt="4"
+                                class="w-full h-48 sm:h-64 object-cover shadow-lg" />
+                        </div>
+
                         <div class="flex-shrink-0 w-full sm:w-[80%] md:w-[300px] mx-auto sm:mx-2">
                             <img src="assets/images/slider/2.jpg" alt="2"
                                 class="w-full h-48 sm:h-64 object-cover shadow-lg" />
@@ -163,7 +239,7 @@
 
 
 
-    <section class="bg-[#005A9C] py-20 text-white relative z-10">
+    <section class="bg-[#2E7D32] py-20 text-white relative z-10">
         <div class="container mx-auto px-6 max-w-6xl">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12" data-aos="fade-up">
                 Our Impact in Numbers
@@ -341,13 +417,57 @@
 
 
 
+    <section id="testimonials" class="bg-[#f7fafc] py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-[#2E7D32] mb-10">What People Are Saying</h2>
+
+            <div class="swiper max-w-4xl mx-auto">
+                <div class="swiper-wrapper">
+                    <!-- Testimonial 1 -->
+                    <div class="swiper-slide bg-white p-8 rounded-xl shadow-lg text-center">
+                        <p class="text-gray-700 text-lg italic mb-4">
+                            "One Community Link provided the support we needed to empower women in our local community."
+                        </p>
+                        <h4 class="font-semibold text-[#2E7D32]">Aisha Bello</h4>
+                        <span class="text-gray-500 text-sm">Community Leader</span>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="swiper-slide bg-white p-8 rounded-xl shadow-lg text-center">
+                        <p class="text-gray-700 text-lg italic mb-4">
+                            "I volunteered for one of their outreach programs, and it was one of the best experiences of
+                            my life."
+                        </p>
+                        <h4 class="font-semibold text-[#2E7D32]">John Okafor</h4>
+                        <span class="text-gray-500 text-sm">Volunteer</span>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="swiper-slide bg-white p-8 rounded-xl shadow-lg text-center">
+                        <p class="text-gray-700 text-lg italic mb-4">
+                            "Thanks to their scholarship drive, I was able to continue my education."
+                        </p>
+                        <h4 class="font-semibold text-[#2E7D32]">Chiamaka Nwosu</h4>
+                        <span class="text-gray-500 text-sm">Student</span>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="swiper-pagination mt-6"></div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Contact Section -->
     <section id="contact" class="relative bg-gray-100">
         <!-- Google Map Full Width -->
         <div class="w-full h-[500px] lg:h-[600px]">
-            <iframe src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAP_EMBED_URL" width="100%" height="100%"
-                style="border:0;" allowfullscreen="" loading="lazy" class="w-full h-full"></iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.928830826039!2d-1.3066408!3d54.57000600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e92e8acc28351%3A0x21f5aeb136eef38a!2sRhema%20House!5e0!3m2!1sen!2sng!4v1746551464524!5m2!1sen!2sng"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                class="w-full h-full"></iframe>
+
         </div>
 
         <!-- Contact Info Overlay -->
@@ -372,7 +492,8 @@
                     <i class="fas fa-phone-alt text-[#005A9C] text-2xl mt-1"></i>
                     <div>
                         <p class="font-semibold text-lg">Phone</p>
-                        <p class="text-gray-700"><a href="tel:+447863240016" class="hover:underline">+44 7863 240016</a></p>
+                        <p class="text-gray-700"><a href="tel:+447863240016" class="hover:underline">+44 7863 240016</a>
+                        </p>
                     </div>
                 </div>
                 <!-- Email -->
@@ -380,7 +501,8 @@
                     <i class="fas fa-envelope text-[#005A9C] text-2xl mt-1"></i>
                     <div>
                         <p class="font-semibold text-lg">Email</p>
-                        <p class="text-gray-700"><a href="mailto:info@onecommunitylink.org" class="hover:underline">info@onecommunitylink.org</a></p>
+                        <p class="text-gray-700"><a href="mailto:info@onecommunitylink.org"
+                                class="hover:underline">info@onecommunitylink.org</a></p>
                     </div>
                 </div>
             </div>
@@ -389,8 +511,9 @@
     </section>
 
 
+
     <!-- Footer -->
-    <footer class="bg-[#005A9C] text-white py-8">
+    <footer class="bg-[#2E7D32] text-white py-8">
         <div class="container mx-auto px-6 text-center">
             <p class="mb-4">&copy; 2025 One Community Link. All rights reserved.</p>
             <div class="flex justify-center space-x-6">
@@ -401,135 +524,7 @@
     </footer>
 
 
-
-    <script>
-        $(document).ready(function () {
-            // Toggle with slide animation
-            $('#menu-toggle').click(function () {
-                $('#mobile-menu').slideToggle('fast');
-            });
-
-            // Hide mobile menu on resize to desktop
-            $(window).on('resize', function () {
-                if ($(window).width() >= 768) {
-                    $('#mobile-menu').hide(); // Use .hide() instead of class
-                }
-            });
-        });
-    </script>
-
-    <script>
-        $(document).ready(function () {
-            const $track = $('#carousel-track');
-            const $slides = $track.children();
-            const slideWidth = $slides.outerWidth(true);
-            let autoSlide;
-
-            // Clone slides for seamless looping
-            $slides.clone().appendTo($track);
-
-            let position = 0;
-
-            function moveNext() {
-                position++;
-                $track.css('transform', `translateX(${-position * slideWidth}px)`);
-
-                // Reset after half (since we cloned slides)
-                if (position >= $slides.length) {
-                    setTimeout(() => {
-                        $track.css('transition', 'none');
-                        position = 0;
-                        $track.css('transform', 'translateX(0)');
-                        // Re-enable transition
-                        setTimeout(() => {
-                            $track.css('transition', 'transform 0.7s ease-in-out');
-                        }, 50);
-                    }, 700);
-                }
-            }
-
-            function movePrev() {
-                if (position === 0) {
-                    // Jump to clone copy
-                    $track.css('transition', 'none');
-                    position = $slides.length;
-                    $track.css('transform', `translateX(${-position * slideWidth}px)`);
-                    setTimeout(() => {
-                        $track.css('transition', 'transform 0.7s ease-in-out');
-                        position--;
-                        $track.css('transform', `translateX(${-position * slideWidth}px)`);
-                    }, 50);
-                } else {
-                    position--;
-                    $track.css('transform', `translateX(${-position * slideWidth}px)`);
-                }
-            }
-
-            $('#next').click(moveNext);
-            $('#prev').click(movePrev);
-
-            function startAutoSlide() {
-                autoSlide = setInterval(moveNext, 4000);
-            }
-
-            function stopAutoSlide() {
-                clearInterval(autoSlide);
-            }
-
-            $('#carousel-wrapper').hover(stopAutoSlide, startAutoSlide);
-
-            startAutoSlide();
-
-            // ✅ Touch swipe support for touch devices only
-            if ('ontouchstart' in window || navigator.maxTouchPoints) {
-                let touchStartX = 0;
-                let touchEndX = 0;
-
-                const wrapper = document.getElementById('carousel-wrapper');
-
-                wrapper.addEventListener('touchstart', (e) => {
-                    touchStartX = e.changedTouches[0].screenX;
-                });
-
-                wrapper.addEventListener('touchend', (e) => {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleGesture();
-                });
-
-                function handleGesture() {
-                    const swipeThreshold = 50; // minimum distance to consider as swipe
-
-                    if (touchEndX < touchStartX - swipeThreshold) {
-                        moveNext(); // Swipe left
-                    }
-                    if (touchEndX > touchStartX + swipeThreshold) {
-                        movePrev(); // Swipe right
-                    }
-                }
-            }
-        });
-    </script>
-
-
-    <script>
-        function animateOnScroll() {
-            $('.service-card').each(function () {
-                const elemTop = $(this).offset().top;
-                const winBottom = $(window).scrollTop() + $(window).height();
-
-                if (winBottom > elemTop + 50) {
-                    $(this).addClass('opacity-100 translate-y-0');
-                }
-            });
-        }
-
-        $(document).ready(function () {
-            animateOnScroll();
-            $(window).on('scroll resize', function () {
-                animateOnScroll();
-            });
-        });
-    </script>
+    <script src="app.js"></script>
 
 
     <!-- Animate.css for smooth animation (optional, if you want) -->
