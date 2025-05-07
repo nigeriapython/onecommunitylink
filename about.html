@@ -29,100 +29,100 @@
 </head>
 
 <body class="font-sans antialiased">
-    <!-- Navbar -->
-    <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
-        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+   <!-- Navbar -->
+   <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
 
-            <!-- Logo -->
-            <div class="flex-shrink-0">
-                <a href="index.html">
-                    <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
-                </a>
-            </div>
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+            <a href="index.html">
+                <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+            </a>
+        </div>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
-                <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
-                <a href="#about" class="hover:text-[#F7B32B] transition">About Us</a>
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
+            <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
+            <a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a>
 
-                <!-- Services Dropdown -->
-                <div class="relative group has-dropdown">
-                    <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
-                        Services
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
-                        </svg>
-                    </button>
-                    <div
-                        class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
-                        <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
-                            Support</a>
-                        <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
-                            Access</a>
-                        <a href="#empowerment"
-                            class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
-                    </div>
+            <!-- Services Dropdown -->
+            <div class="relative group has-dropdown">
+                <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
+                    Services
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                    </svg>
+                </button>
+                <div
+                    class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
+                    <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
+                        Support</a>
+                    <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
+                        Access</a>
+                    <a href="#empowerment"
+                        class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
                 </div>
-
-                <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
-                <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
-                <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
-                <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
             </div>
 
-            <!-- Donate -->
-            <div class="hidden md:flex">
+            <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
+            <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
+            <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
+            <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
+        </div>
+
+        <!-- Donate -->
+        <div class="hidden md:flex">
+            <a href="donate.html"
+                class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                Donate
+            </a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <div class="md:hidden">
+            <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
+        <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
+            <li><a href="index.html" class="hover:text-[#F7B32B] transition">Home</a></li>
+            <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
+
+            <!-- Services Mobile Dropdown -->
+            <li class="has-dropdown">
+                <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
+                    Services
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                    </svg>
+                </button>
+                <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
+                    <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
+                    <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
+                    <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+            <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
+            <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
+            <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+            <li>
                 <a href="donate.html"
                     class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
                     Donate
                 </a>
-            </div>
-
-            <!-- Mobile Menu Toggle -->
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7" />
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
-            <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
-                <li><a href="#home" class="hover:text-[#F7B32B] transition">Home</a></li>
-                <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
-
-                <!-- Services Mobile Dropdown -->
-                <li class="has-dropdown">
-                    <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
-                        Services
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
-                        </svg>
-                    </button>
-                    <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
-                        <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
-                        <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
-                        <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
-                    </ul>
-                </li>
-
-                <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
-                <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
-                <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
-                <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
-                <li>
-                    <a href="#donate"
-                        class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
-                        Donate
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+            </li>
+        </ul>
+    </div>
+</nav>
 
 
 
