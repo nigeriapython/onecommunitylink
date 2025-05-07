@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Community Link</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
+                <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
+                <a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group has-dropdown">
+                    <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
+                        <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
+                            Support</a>
+                        <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
+                            Access</a>
+                        <a href="#empowerment"
+                            class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
+                    </div>
+                </div>
+
+                <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
+                <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
+                <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
+                <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
+            </div>
+
+            <!-- Donate -->
+            <div class="hidden md:flex">
+                <a href="donate.html"
+                    class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                    Donate
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
+            <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
+                <li><a href="index.html" class="hover:text-[#F7B32B] transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
+
+                <!-- Services Mobile Dropdown -->
+                <li class="has-dropdown">
+                    <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
+                        <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
+                        <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
+                        <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
+                <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
+                <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                <li>
+                    <a href="donate.html"
+                        class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                        Donate
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+<!-- IT Positions Section -->
+<section class="bg-white py-20" id="it-specialist">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Section Title -->
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold text-[#2E7D32]">IT Specialist</h2>
+            <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                Join our IT team and help us develop the technological infrastructure that supports our impactful work in the field.
+            </p>
+        </div>
+
+        <!-- Job Details -->
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <h3 class="text-2xl font-semibold text-[#2E7D32]">Role Overview</h3>
+            <p class="text-gray-600 mt-4">
+                The IT Specialist is responsible for managing and maintaining the technological systems that support our organization’s operations. You will ensure the security of our IT infrastructure, troubleshoot issues, and ensure all systems run efficiently.
+            </p>
+
+            <!-- Key Responsibilities -->
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold text-[#2E7D32]">Key Responsibilities</h4>
+                <ul class="list-disc pl-6 mt-4 text-gray-600">
+                    <li>Manage and optimize the organization’s IT infrastructure.</li>
+                    <li>Ensure cybersecurity protocols are followed to protect sensitive data.</li>
+                    <li>Provide technical support for staff and volunteers in the field.</li>
+                    <li>Troubleshoot and resolve hardware and software issues.</li>
+                    <li>Assist with the development and implementation of new technological solutions.</li>
+                </ul>
+            </div>
+
+            <!-- Qualifications -->
+            <div class="mt-8">
+                <h4 class="text-xl font-semibold text-[#2E7D32]">Qualifications</h4>
+                <ul class="list-disc pl-6 mt-4 text-gray-600">
+                    <li>Bachelor’s degree in Information Technology, Computer Science, or a related field.</li>
+                    <li>At least 2 years of experience in IT systems management or related roles.</li>
+                    <li>Strong knowledge of IT infrastructure, networking, and security protocols.</li>
+                    <li>Problem-solving skills and the ability to work under pressure.</li>
+                    <li>Good communication skills to interact with various stakeholders.</li>
+                </ul>
+            </div>
+
+            <!-- Application Button -->
+            <div class="mt-8 text-center">
+                <a href="apply-it.html" class="inline-block px-8 py-3 bg-[#00A1E4] text-white font-semibold rounded-lg shadow-lg hover:bg-[#008ACD] transition duration-300">
+                    Apply Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+    <footer class="bg-[#1B5E20] text-white pt-16 pb-8 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- About -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About Us</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        One Community Link empowers people by connecting them with education, support, and opportunity.
+                        Our mission is to build brighter futures—together.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#about" class="hover:text-[#F7B32B] transition">About</a></li>
+                        <li><a href="#impact" class="hover:text-[#F7B32B] transition">Impact</a></li>
+                        <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                        <li><a href="#donate" class="hover:text-[#F7B32B] transition">Donate</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fas fa-phone-alt mr-2 text-[#F7B32B]"></i> <a href="tel:+447863240016">+44 7863
+                                240016</a></li>
+                        <li><i class="fas fa-envelope mr-2 text-[#F7B32B]"></i> <a
+                                href="mailto:info@onecommunitylink.org">info@onecommunitylink.org</a></li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-[#F7B32B]"></i> Rhema House, Stockton-on-Tees</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/20 mt-10 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 One Community Link. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="hover:text-[#F7B32B] transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#F7B32B] transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="app.js"></script>
+
+
+    <!-- Animate.css for smooth animation (optional, if you want) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</body>
+
+</html>

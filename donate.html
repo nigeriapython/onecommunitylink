@@ -29,139 +29,152 @@
 </head>
 
 <body class="font-sans antialiased">
-<!-- Navbar -->
-<nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
-    <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+    <!-- Navbar -->
+    <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
 
-        <!-- Logo -->
-        <div class="flex-shrink-0">
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
-            </a>
-        </div>
-
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
-            <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
-            <a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a>
-
-            <!-- Services Dropdown -->
-            <div class="relative group has-dropdown">
-                <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
-                    Services
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M5.25 7.5L10 12.25L14.75 7.5" />
-                    </svg>
-                </button>
-                <div
-                    class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
-                    <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
-                        Support</a>
-                    <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
-                        Access</a>
-                    <a href="#empowerment"
-                        class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
-                </div>
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+                </a>
             </div>
 
-            <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
-            <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
-            <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
-            <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
-        </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
+                <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
+                <a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a>
 
-        <!-- Donate -->
-        <div class="hidden md:flex">
-            <a href="donate.html"
-                class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
-                Donate
-            </a>
-        </div>
+                <!-- Services Dropdown -->
+                <div class="relative group has-dropdown">
+                    <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
+                        <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
+                            Support</a>
+                        <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
+                            Access</a>
+                        <a href="#empowerment"
+                            class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
+                    </div>
+                </div>
 
-        <!-- Mobile Menu Toggle -->
-        <div class="md:hidden">
-            <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </div>
-    </div>
+                <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
+                <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
+                <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
+                <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
+            </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
-        <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
-            <li><a href="index.html" class="hover:text-[#F7B32B] transition">Home</a></li>
-            <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
-
-            <!-- Services Mobile Dropdown -->
-            <li class="has-dropdown">
-                <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
-                    Services
-                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M5.25 7.5L10 12.25L14.75 7.5" />
-                    </svg>
-                </button>
-                <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
-                    <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
-                    <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
-                    <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
-                </ul>
-            </li>
-
-            <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
-            <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
-            <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
-            <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
-            <li>
+            <!-- Donate -->
+            <div class="hidden md:flex">
                 <a href="donate.html"
                     class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
                     Donate
                 </a>
-            </li>
-        </ul>
-    </div>
-</nav>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
+            <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
+                <li><a href="index.html" class="hover:text-[#F7B32B] transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
+
+                <!-- Services Mobile Dropdown -->
+                <li class="has-dropdown">
+                    <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
+                        <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
+                        <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
+                        <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
+                <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
+                <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                <li>
+                    <a href="donate.html"
+                        class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                        Donate
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 
 
-    <!-- Combined Hero and Donation Section -->
     <section class="relative w-full bg-cover bg-center"
         style="background-image: url('assets/images/pexels-rdne-6647117.jpg');">
+        <!-- Overlay -->
         <div class="absolute inset-0 bg-black opacity-60"></div>
-        <div class="container mx-auto text-center sm:text-left relative z-10 px-4 py-16 sm:py-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
-                <!-- Hero Section (Left Column) -->
-                <div class="flex flex-col justify-center">
-                    <h1
-                        class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-6 animate__animated animate__fadeIn animate__delay-1s">
+
+        <!-- Content Container -->
+        <div class="relative z-10 container mx-auto px-4 py-20 sm:py-28">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+                <!-- Left: Hero Text -->
+                <div class="text-white space-y-6">
+                    <h1 class="text-4xl sm:text-5xl font-bold leading-tight animate__animated animate__fadeIn">
                         Make a Difference Today
                     </h1>
-                    <p
-                        class="text-lg sm:text-xl md:text-2xl text-white mb-8 animate__animated animate__fadeIn animate__delay-1.5s">
+                    <p class="text-lg sm:text-xl leading-relaxed animate__animated animate__fadeIn animate__delay-1s">
                         Your support helps transform lives through education, healthcare, and community development.
                         Every donation matters.
                     </p>
                     <a href="#donate-form"
-                        class="bg-[#F7B32B] text-white py-4 px-8 rounded-full font-semibold text-lg hover:bg-yellow-400 transition duration-300 shadow-md animate__animated animate__fadeIn animate__delay-2s">
+                        class="inline-block bg-[#F7B32B] text-white py-3 px-6 rounded-full font-semibold text-lg hover:bg-yellow-400 transition duration-300 shadow-md animate__animated animate__fadeIn animate__delay-2s">
                         Donate Now
                     </a>
                 </div>
 
-                <!-- Donation Form Section (Right Column) -->
+                <!-- Right: Donation Form Card -->
                 <div id="donate-form"
-                    class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto animate__animated animate__fadeIn animate__delay-3s">
-                    <h2 class="text-3xl sm:text-4xl font-bold text-[#2E7D32] mb-8">Support Our Mission</h2>
-                    <p class="text-lg text-gray-600 mb-8">
+                    class="bg-white p-8 rounded-xl shadow-2xl max-w-lg w-full mx-auto animate__animated animate__fadeIn animate__delay-3s">
+                    <h2 class="text-3xl font-bold text-[#2E7D32] mb-4">Support Our Mission</h2>
+                    <p class="text-gray-600 text-base mb-6">
                         Your generous donation helps us empower communities through education, healthcare, and
-                        sustainable initiatives. Join us in making a lasting impact.
+                        sustainable initiatives.
                     </p>
+
+                    <!-- Progress Bar -->
+                    <div class="mb-6">
+                        <div class="flex items-center justify-between mb-2">
+                            <span id="progress-label" class="text-sm text-gray-600">Step 1 of 3</span>
+                        </div>
+                        <div class="w-full bg-gray-200 h-2 rounded-full overflow-hidden">
+                            <div id="progress-fill"
+                                class="bg-[#F7B32B] h-full w-1/3 transition-all duration-300 ease-in-out"></div>
+                        </div>
+                    </div>
 
                     <form id="donation-form" action="#" method="POST" class="space-y-6">
                         <!-- Step 1: Select Donation Amount -->
                         <div id="step-1" class="donation-step">
                             <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Select Your Donation Amount</h3>
+
                             <select id="donation-amount" name="donation_amount"
                                 class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]">
                                 <option value="10">$10</option>
@@ -170,56 +183,113 @@
                                 <option value="100">$100</option>
                                 <option value="other">Other</option>
                             </select>
+
+                            <!-- Custom Amount Field -->
+                            <input type="number" id="custom-amount" name="custom_amount" min="1" step="0.01"
+                                placeholder="Enter custom amount"
+                                class="w-full mt-4 p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B] hidden" />
+                            <p id="amount-error" class="text-red-600 text-sm mt-2 hidden">Please enter a valid amount.
+                            </p>
+
                             <button type="button"
-                                class="next-step bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md mt-6">Next</button>
+                                class="next-step bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md mt-6 w-full">
+                                Next
+                            </button>
                         </div>
 
-                        <!-- Step 2: Personal Information -->
+                        <!-- Step 2: User Details -->
                         <div id="step-2" class="donation-step hidden">
-                            <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Enter Your Details</h3>
-                            <div class="mb-6">
-                                <label for="donor-name" class="block text-lg font-semibold text-[#2E7D32] mb-2">Full
-                                    Name</label>
-                                <input type="text" id="donor-name" name="donor_name" required placeholder="Your Name"
-                                    class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]" />
-                            </div>
+                            <label for="donor-name" class="block text-lg font-semibold text-[#2E7D32] mb-2">Full
+                                Name</label>
+                            <input type="text" id="donor-name" name="donor_name" required
+                                class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]">
 
-                            <div class="mb-6">
-                                <label for="donor-email" class="block text-lg font-semibold text-[#2E7D32] mb-2">Email
-                                    Address</label>
-                                <input type="email" id="donor-email" name="donor_email" required
-                                    placeholder="Your Email"
-                                    class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]" />
-                            </div>
+                            <label for="donor-email"
+                                class="block text-lg font-semibold text-[#2E7D32] mt-4 mb-2">Email</label>
+                            <input type="email" id="donor-email" name="donor_email" required
+                                class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]">
 
-                            <div class="mb-6">
-                                <label for="donor-message"
-                                    class="block text-lg font-semibold text-[#2E7D32] mb-2">Message (Optional)</label>
-                                <textarea id="donor-message" name="donor_message" rows="4" placeholder="Your Message"
-                                    class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]"></textarea>
-                            </div>
+                            <label for="donor-message"
+                                class="block text-lg font-semibold text-[#2E7D32] mt-4 mb-2">Message (Optional)</label>
+                            <textarea id="donor-message" name="donor_message" rows="3"
+                                class="w-full p-3 border border-gray-300 rounded-md text-gray-800 focus:ring-2 focus:ring-[#F7B32B]"></textarea>
 
                             <button type="button"
-                                class="next-step bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md mt-6">Next</button>
+                                class="next-step mt-4 bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 w-full">
+                                Next
+                            </button>
                         </div>
 
-                        <!-- Step 3: Confirmation -->
+                        <!-- Step 3: Payment Method & Confirmation -->
                         <div id="step-3" class="donation-step hidden">
-                            <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Confirm Your Donation</h3>
-                            <p class="text-lg text-gray-600 mb-6">Thank you for your generosity! Please review your
-                                donation details and click "Donate Now" to proceed.</p>
+                            <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Choose Your Payment Method</h3>
 
-                            <div class="flex justify-center">
-                                <button type="submit"
-                                    class="bg-[#F7B32B] text-white py-3 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 shadow-md">Donate
-                                    Now</button>
-                            </div>
+                            <!-- Payment Method Selection -->
+<div class="space-y-4">
+    <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:shadow-md transition duration-200 bg-white">
+        <input type="radio" name="payment_method" value="credit_card" class="form-radio text-[#2E7D32] mr-4">
+        <i class="fas fa-credit-card text-[#2E7D32] text-xl mr-3"></i>
+        <div>
+            <span class="block font-semibold text-gray-800">Credit Card</span>
+            <span class="text-sm text-gray-500">Visa, MasterCard, Amex</span>
+        </div>
+    </label>
+
+    <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:shadow-md transition duration-200 bg-white">
+        <input type="radio" name="payment_method" value="paypal" class="form-radio text-[#2E7D32] mr-4">
+        <i class="fab fa-paypal text-[#2E7D32] text-xl mr-3"></i>
+        <div>
+            <span class="block font-semibold text-gray-800">PayPal</span>
+            <span class="text-sm text-gray-500">Secure and fast checkout</span>
+        </div>
+    </label>
+
+    <label class="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:shadow-md transition duration-200 bg-white">
+        <input type="radio" name="payment_method" value="bank_transfer" class="form-radio text-[#2E7D32] mr-4">
+        <i class="fas fa-university text-[#2E7D32] text-xl mr-3"></i>
+        <div>
+            <span class="block font-semibold text-gray-800">Bank Transfer</span>
+            <span class="text-sm text-gray-500">Transfer directly from your bank</span>
+        </div>
+    </label>
+</div>
+
+                            
+
+                            <button type="submit"
+                                class="bg-[#F7B32B] text-white py-3 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 w-full mt-6">
+                                Donate Now
+                            </button>
                         </div>
                     </form>
+
+                    <!-- Start Over Button -->
+                    <button id="start-over-form"
+                        class="bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300 mt-6 hidden w-full">
+                        Start Over
+                    </button>
                 </div>
+
+                <!-- Success Modal -->
+                <div id="success-modal"
+                    class="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+                    <div class="bg-white p-8 rounded-xl shadow-xl max-w-lg w-full text-center">
+                        <img src="assets/images/slider/4.jpg" alt="Thank You" class="w-80 mx-auto mb-4">
+                        <h3 class="text-2xl font-semibold text-[#2E7D32] mb-4">Thank You for Your Donation!</h3>
+                        <p class="text-gray-600 mb-6">Your support makes a big difference. We appreciate your
+                            generosity!</p>
+                        <button id="close-modal"
+                            class="bg-[#F7B32B] text-white py-2 px-6 rounded-full font-semibold hover:bg-yellow-400 transition duration-300">
+                            Close
+                        </button>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
+
 
 
 
@@ -340,36 +410,6 @@
             </div>
         </div>
     </section>
-
-
-
-    <!-- Add some custom JS for the donation wizard functionality -->
-    <script>
-        let currentStep = 1;
-        const steps = document.querySelectorAll('.donation-step');
-
-        function showStep(step) {
-            steps.forEach((el, index) => {
-                if (index === step - 1) {
-                    el.classList.remove('hidden');
-                } else {
-                    el.classList.add('hidden');
-                }
-            });
-        }
-
-        document.querySelectorAll('.next-step').forEach(button => {
-            button.addEventListener('click', () => {
-                if (currentStep < steps.length) {
-                    currentStep++;
-                    showStep(currentStep);
-                }
-            });
-        });
-
-        showStep(currentStep); // Initialize by showing the first step
-    </script>
-
 
 
     <footer class="bg-[#1B5E20] text-white pt-16 pb-8 relative z-10">

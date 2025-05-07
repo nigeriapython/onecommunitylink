@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Community Link</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
+                <a href="#home" class="hover:text-[#F7B32B] transition">Home</a>
+                <a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group has-dropdown">
+                    <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
+                        <a href="#education" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
+                            Support</a>
+                        <a href="#healthcare" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
+                            Access</a>
+                        <a href="#empowerment"
+                            class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
+                    </div>
+                </div>
+
+                <a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a>
+                <a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a>
+                <a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a>
+                <a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a>
+            </div>
+
+            <!-- Donate -->
+            <div class="hidden md:flex">
+                <a href="donate.html"
+                    class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                    Donate
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
+            <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
+                <li><a href="index.html" class="hover:text-[#F7B32B] transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
+
+                <!-- Services Mobile Dropdown -->
+                <li class="has-dropdown">
+                    <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
+                        <li><a href="#education" class="hover:text-[#F7B32B] transition">Education Support</a></li>
+                        <li><a href="#healthcare" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
+                        <li><a href="#empowerment" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#volunteer" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                <li><a href="#careers" class="hover:text-[#F7B32B] transition">Careers</a></li>
+                <li><a href="#blog" class="hover:text-[#F7B32B] transition">Blog</a></li>
+                <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                <li>
+                    <a href="donate.html"
+                        class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                        Donate
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!-- Blog Detail Page -->
+    <section class="bg-gray-50 pt-20 pb-16">
+        <div class="max-w-4xl mx-auto px-4">
+
+            <!-- Hero / Title Section -->
+            <div class="mb-10">
+                <img src="assets/images/slider/4.jpg" alt="Blog Feature"
+                    class="rounded-xl w-full h-72 object-cover mb-6">
+                <h1 class="text-4xl font-bold text-[#2E7D32] mb-2">Empowering Youth Through Education</h1>
+                <div class="flex items-center text-gray-500 text-sm space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <img src="assets/images/team1.jpg" alt="Author" class="w-8 h-8 rounded-full">
+                        <span>John Doe</span>
+                    </div>
+                    <span>•</span>
+                    <span>April 28, 2025</span>
+                    <span>•</span>
+                    <span class="text-[#F7B32B]">Education</span>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <article
+                class="prose max-w-none prose-img:rounded-lg prose-headings:text-[#2E7D32] prose-a:text-[#2E7D32] prose-a:underline hover:prose-a:text-[#F7B32B]">
+                <p>
+                    Education is a powerful tool that can transform lives and communities. At One Community Link, we are
+                    committed to providing youth with the resources they need to succeed in school and beyond.
+                </p>
+
+                <h2>Our Mission in Action</h2>
+                <p>Through strategic partnerships and dedicated programs, we've helped over 3,000 students gain access
+                    to quality education and mentoring.</p>
+
+                <blockquote>
+                    "Education is the most powerful weapon which you can use to change the world." — Nelson Mandela
+                </blockquote>
+
+                <h2>Key Highlights</h2>
+                <ul>
+                    <li>Mentorship programs across 5 regions</li>
+                    <li>Scholarships awarded to over 500 students</li>
+                    <li>Technology access programs launched in 2024</li>
+                </ul>
+
+                <img src="assets/images/mission1.jpg" alt="Empowerment" />
+
+                <p>
+                    Your support helps us scale these programs and reach more children every year. Consider becoming a
+                    mentor or donor today.
+                </p>
+            </article>
+
+            <!-- Tags & Social Share -->
+            <div class="mt-10 flex flex-wrap justify-between items-center">
+                <div class="flex space-x-2">
+                    <span
+                        class="bg-[#E8F5E9] text-[#2E7D32] px-3 py-1 rounded-full text-sm font-medium">#Education</span>
+                    <span class="bg-[#FFF3E0] text-[#F7B32B] px-3 py-1 rounded-full text-sm font-medium">#Youth</span>
+                </div>
+                <div class="flex space-x-4 text-lg text-gray-600">
+                    <a href="#" class="hover:text-[#2E7D32]"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-[#2E7D32]"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-[#2E7D32]"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Related Posts -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-[#2E7D32] mb-6">Related Posts</h3>
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
+                        <img src="assets/images/slider/3.jpg" alt="Related Post 1" class="h-40 w-full object-cover">
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold text-gray-800">Reaching Underserved Communities</h4>
+                            <p class="text-sm text-gray-600 mt-1">Discover how our outreach teams are changing lives on
+                                the ground.</p>
+                            <a href="#"
+                                class="text-[#2E7D32] mt-2 inline-block text-sm font-medium hover:underline">Read More
+                                →</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
+                        <img src="assets/images/slider/4.jpg" alt="Related Post 2" class="h-40 w-full object-cover">
+                        <div class="p-4">
+                            <h4 class="text-lg font-semibold text-gray-800">The Power of Mentorship</h4>
+                            <p class="text-sm text-gray-600 mt-1">How mentors are making a difference for young people
+                                in need.</p>
+                            <a href="#"
+                                class="text-[#2E7D32] mt-2 inline-block text-sm font-medium hover:underline">Read More
+                                →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
+    </section>
+
+
+
+
+    <footer class="bg-[#1B5E20] text-white pt-16 pb-8 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- About -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About Us</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        One Community Link empowers people by connecting them with education, support, and opportunity.
+                        Our mission is to build brighter futures—together.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#about" class="hover:text-[#F7B32B] transition">About</a></li>
+                        <li><a href="#impact" class="hover:text-[#F7B32B] transition">Impact</a></li>
+                        <li><a href="#contact" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                        <li><a href="#donate" class="hover:text-[#F7B32B] transition">Donate</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fas fa-phone-alt mr-2 text-[#F7B32B]"></i> <a href="tel:+447863240016">+44 7863
+                                240016</a></li>
+                        <li><i class="fas fa-envelope mr-2 text-[#F7B32B]"></i> <a
+                                href="mailto:info@onecommunitylink.org">info@onecommunitylink.org</a></li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-[#F7B32B]"></i> Rhema House, Stockton-on-Tees</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/20 mt-10 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 One Community Link. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="hover:text-[#F7B32B] transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#F7B32B] transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="app.js"></script>
+
+
+    <!-- Animate.css for smooth animation (optional, if you want) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</body>
+
+</html>

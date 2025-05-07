@@ -68,11 +68,34 @@
 .row {
     display: flex;
     align-items: stretch;
-  }
-  
-  .side {
+}
+
+.side {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-  }
-  
+}
+
+
+
+
+
+
+/* Custom focus ring color for inputs */
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #F7B32B;
+    box-shadow: 0 0 0 2px rgba(247, 179, 43, 0.5);
+}
+
+/* Transition effect for form steps */
+.donation-step {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.donation-step.hidden {
+    opacity: 0;
+}
+

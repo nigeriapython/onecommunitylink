@@ -322,34 +322,6 @@
 
 
 
-    <!-- Add some custom JS for the donation wizard functionality -->
-    <script>
-        let currentStep = 1;
-        const steps = document.querySelectorAll('.donation-step');
-
-        function showStep(step) {
-            steps.forEach((el, index) => {
-                if (index === step - 1) {
-                    el.classList.remove('hidden');
-                } else {
-                    el.classList.add('hidden');
-                }
-            });
-        }
-
-        document.querySelectorAll('.next-step').forEach(button => {
-            button.addEventListener('click', () => {
-                if (currentStep < steps.length) {
-                    currentStep++;
-                    showStep(currentStep);
-                }
-            });
-        });
-
-        showStep(currentStep); // Initialize by showing the first step
-    </script>
-
-
 
     <footer class="bg-[#1B5E20] text-white pt-16 pb-8 relative z-10">
         <div class="container mx-auto px-6">
