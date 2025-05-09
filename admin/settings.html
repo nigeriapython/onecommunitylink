@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Admin Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Reuse your existing styles */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .dark {
+      background-color: #1a202c;
+      color: #f7fafc;
+    }
+    .dark .sidebar {
+      background-color: #22543d;
+    }
+    .dark .card {
+      background-color: #2d3748;
+      color: #f7fafc;
+    }
+    .dark input,
+    .dark select {
+      background-color: #4a5568;
+      color: white;
+      border-color: #4a5568;
+    }
+    .sidebar {
+      width: 250px;
+      background-color: #2E7D32;
+      color: white;
+      height: 100vh;
+      position: fixed;
+      transition: all 0.3s ease;
+      z-index: 20;
+    }
+    .main-content {
+      margin-left: 250px;
+      padding: 20px;
+      width: calc(100% - 250px);
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+      .sidebar.active {
+        transform: translateX(0);
+      }
+      .main-content {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .toast.success {
+      background-color: #48bb78;
+      color: white;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Dark Mode Toggle -->
+  <button id="darkModeToggle" class="fixed bottom-4 left-4 bg-gray-800 text-white p-3 rounded-full z-50 shadow-lg">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Mobile Menu Button -->
+  <button id="mobileMenuButton" class="md:hidden fixed top-4 left-4 z-50 bg-[#2E7D32] text-white p-3 rounded-full shadow-lg">
+    <i class="fas fa-bars text-xl"></i>
+  </button>
+
+  <!-- Sidebar (Same as your existing sidebar) -->
+  <aside id="sidebar" class="sidebar">
+    <div class="p-4 border-b border-[#4CAF50] flex items-center">
+      <img src="https://via.placeholder.com/40" alt="One Community Link Logo" class="h-10 w-10 mr-3 rounded">
+      <h1 class="text-xl font-bold">Admin Panel</h1>
+    </div>
+
+    <nav class="p-4 space-y-2">
+      <a href="dashboard.html" class="nav-item flex items-center py-2 px-4 hover:bg-[#4CAF50] rounded">
+        <i class="fas fa-tachometer-alt mr-3"></i>
+        <span>Dashboard</span>
+      </a>
+      <a href="settings.html" class="nav-item flex items-center py-2 px-4 bg-[#4CAF50] rounded">
+        <i class="fas fa-cog mr-3"></i>
+        <span>Settings</span>
+      </a>
+      <!-- Other menu items -->
+    </nav>
+
+    <div class="p-4 border-t border-[#4CAF50] absolute bottom-0 w-full">
+      <button class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded flex items-center justify-center">
+        <i class="fas fa-sign-out-alt mr-2"></i>
+        <span>Logout</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h1 class="text-2xl font-bold">Settings</h1>
+        <p class="text-gray-600 dark:text-gray-300">Manage your account and application preferences</p>
+      </div>
+    </div>
+
+    <!-- Settings Tabs -->
+    <div class="flex border-b border-gray-200 dark:border-gray-700 mb-6">
+      <button class="tab-btn active px-4 py-2 font-medium text-[#2E7D32] border-b-2 border-[#2E7D32]">
+        <i class="fas fa-user-cog mr-2"></i> Account
+      </button>
+      <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-[#2E7D32]">
+        <i class="fas fa-bell mr-2"></i> Notifications
+      </button>
+      <button class="tab-btn px-4 py-2 font-medium text-gray-500 hover:text-[#2E7D32]">
+        <i class="fas fa-lock mr-2"></i> Security
+      </button>
+    </div>
+
+    <!-- Account Settings Card -->
+    <div class="card p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center">
+        <i class="fas fa-user-circle mr-2 text-[#2E7D32]"></i>
+        Profile Information
+      </h2>
+      
+      <form id="profileForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="col-span-2 flex items-center space-x-4">
+          <div class="relative">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="h-20 w-20 rounded-full object-cover border-2 border-[#2E7D32]">
+            <button type="button" class="absolute bottom-0 right-0 bg-[#2E7D32] text-white p-1 rounded-full">
+              <i class="fas fa-camera text-xs"></i>
+            </button>
+          </div>
+          <div>
+            <button type="button" class="text-[#2E7D32] hover:text-[#1B5E20]">
+              <i class="fas fa-upload mr-2"></i> Upload new photo
+            </button>
+            <p class="text-gray-500 text-sm mt-1">JPG, GIF or PNG. Max size 2MB</p>
+          </div>
+        </div>
+        
+        <div>
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">First Name</label>
+          <input type="text" value="Admin" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+        </div>
+        
+        <div>
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">Last Name</label>
+          <input type="text" value="User" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+        </div>
+        
+        <div>
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">Email</label>
+          <input type="email" value="admin@example.com" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+        </div>
+        
+        <div>
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">Phone</label>
+          <input type="tel" value="+1234567890" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+        </div>
+        
+        <div class="col-span-2">
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">Bio</label>
+          <textarea rows="3" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">System administrator for One Community Link</textarea>
+        </div>
+        
+        <div class="col-span-2 flex justify-end">
+          <button type="submit" class="bg-[#2E7D32] hover:bg-[#1B5E20] text-white px-6 py-2 rounded flex items-center">
+            <i class="fas fa-save mr-2"></i>
+            Save Changes
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Password Change Card -->
+    <div class="card p-6 mb-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center">
+        <i class="fas fa-lock mr-2 text-[#2E7D32]"></i>
+        Change Password
+      </h2>
+      
+      <form id="passwordForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">Current Password</label>
+          <div class="relative">
+            <input type="password" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+            <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="md:col-span-2"></div>
+        
+        <div>
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">New Password</label>
+          <div class="relative">
+            <input type="password" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+            <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+          <p class="text-gray-500 text-xs mt-1">Minimum 8 characters</p>
+        </div>
+        
+        <div>
+          <label class="block text-gray-700 dark:text-gray-300 mb-2">Confirm Password</label>
+          <div class="relative">
+            <input type="password" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+            <button type="button" class="absolute right-3 top-3 text-gray-400 hover:text-gray-600">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+        
+        <div class="col-span-2 flex justify-end">
+          <button type="submit" class="bg-[#2E7D32] hover:bg-[#1B5E20] text-white px-6 py-2 rounded flex items-center">
+            <i class="fas fa-key mr-2"></i>
+            Update Password
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Application Preferences Card -->
+    <div class="card p-6">
+      <h2 class="text-xl font-semibold mb-4 flex items-center">
+        <i class="fas fa-sliders-h mr-2 text-[#2E7D32]"></i>
+        Application Preferences
+      </h2>
+      
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-medium">Dark Mode</h3>
+            <p class="text-gray-500 text-sm">Switch between light and dark theme</p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" id="themeToggle" class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#2E7D32]"></div>
+          </label>
+        </div>
+        
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-medium">Email Notifications</h3>
+            <p class="text-gray-500 text-sm">Receive email notifications</p>
+          </div>
+          <label class="relative inline-flex items-center cursor-pointer">
+            <input type="checkbox" checked class="sr-only peer">
+            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#2E7D32]"></div>
+          </label>
+        </div>
+        
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="font-medium">Two-Factor Authentication</h3>
+            <p class="text-gray-500 text-sm">Add an extra layer of security</p>
+          </div>
+          <button class="text-[#2E7D32] hover:text-[#1B5E20] font-medium">
+            Enable
+          </button>
+        </div>
+        
+        <div class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+          <div>
+            <h3 class="font-medium">Language</h3>
+            <p class="text-gray-500 text-sm">Select your preferred language</p>
+          </div>
+          <select class="px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-[#2E7D32] dark:bg-gray-700">
+            <option>English</option>
+            <option>Spanish</option>
+            <option>French</option>
+            <option>German</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    $('#mobileMenuButton').click(function() {
+      $('#sidebar').toggleClass('active');
+    });
+
+    // Dark mode toggle
+    $('#darkModeToggle').click(function() {
+      $('html').toggleClass('dark');
+      const icon = $('html').hasClass('dark') ? 'fa-sun' : 'fa-moon';
+      $(this).html(`<i class="fas ${icon}"></i>`);
+      showToast('Dark mode ' + ($('html').hasClass('dark') ? 'enabled' : 'disabled'));
+    });
+
+    // Theme toggle switch
+    $('#themeToggle').change(function() {
+      $('html').toggleClass('dark');
+      showToast('Theme changed');
+    });
+
+    // Tab switching
+    $('.tab-btn').click(function() {
+      $('.tab-btn').removeClass('active text-[#2E7D32] border-b-2 border-[#2E7D32]').addClass('text-gray-500');
+      $(this).addClass('active text-[#2E7D32] border-b-2 border-[#2E7D32]').removeClass('text-gray-500');
+    });
+
+    // Toggle password visibility
+    $('[type="password"]').next('button').click(function() {
+      const input = $(this).prev();
+      const type = input.attr('type') === 'password' ? 'text' : 'password';
+      input.attr('type', type);
+      $(this).find('i').toggleClass('fa-eye fa-eye-slash');
+    });
+
+    // Form submissions
+    $('#profileForm').submit(function(e) {
+      e.preventDefault();
+      showToast('Profile updated successfully');
+    });
+
+    $('#passwordForm').submit(function(e) {
+      e.preventDefault();
+      showToast('Password changed successfully');
+      this.reset();
+    });
+
+    // Toast notification function
+    function showToast(message, type = 'success') {
+      const toast = $(`
+        <div class="toast ${type}">
+          <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'} mr-2"></i>
+          ${message}
+        </div>
+      `);
+      $('body').append(toast);
+      setTimeout(() => toast.addClass('show'), 10);
+      setTimeout(() => {
+        toast.removeClass('show');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

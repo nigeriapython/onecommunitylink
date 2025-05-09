@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>One Community Link</title>
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body class="font-sans antialiased">
+    <!-- Navbar -->
+    <nav class="bg-white w-full text-[#2E7D32] shadow-md sticky top-0 z-50">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex flex-1 justify-center items-center space-x-8 text-lg font-semibold">
+                <a href="index.html" class="hover:text-[#F7B32B] transition">Home</a>
+                <a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a>
+
+                <!-- Services Dropdown -->
+                <div class="relative group has-dropdown">
+                    <button class="flex items-center gap-1 hover:text-[#F7B32B] transition">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <div
+                        class="dropdown-menu hidden absolute top-full mt-2 left-0 w-48 bg-white shadow-md rounded-md py-2 z-50">
+                        <a href="education_service.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Education
+                            Support</a>
+                        <a href="healthcare_service.html" class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Healthcare
+                            Access</a>
+                        <a href="empowerment_service.html"
+                            class="block px-4 py-2 hover:bg-gray-100 hover:text-[#F7B32B]">Empowerment</a>
+                    </div>
+                </div>
+
+                <a href="volunteer.html" class="hover:text-[#F7B32B] transition">Volunteer</a>
+                <a href="careers.html" class="hover:text-[#F7B32B] transition">Careers</a>
+                <a href="blog.html" class="hover:text-[#F7B32B] transition">Blog</a>
+                <a href="contact.html" class="hover:text-[#F7B32B] transition">Contact</a>
+            </div>
+
+            <!-- Donate -->
+            <div class="hidden md:flex">
+                <a href="donate.html"
+                    class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                    Donate
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-[#2E7D32] focus:outline-none">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white text-[#2E7D32] hidden">
+            <ul class="flex flex-col p-6 space-y-4 text-lg font-semibold">
+                <li><a href="index.html" class="hover:text-[#F7B32B] transition">Home</a></li>
+                <li><a href="about.html" class="hover:text-[#F7B32B] transition">About Us</a></li>
+
+                <!-- Services Mobile Dropdown -->
+                <li class="has-dropdown">
+                    <button class="flex items-center justify-between w-full hover:text-[#F7B32B] dropdown-toggle">
+                        Services
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M5.25 7.5L10 12.25L14.75 7.5" />
+                        </svg>
+                    </button>
+                    <ul class="dropdown-menu pl-4 mt-2 space-y-2 text-base hidden">
+                        <li><a href="education_service.html" class="hover:text-[#F7B32B] transition">Education Support</a></li>
+                        <li><a href="healthcare_service.html" class="hover:text-[#F7B32B] transition">Healthcare Access</a></li>
+                        <li><a href="empowerment_service.html" class="hover:text-[#F7B32B] transition">Empowerment</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="volunteer.html" class="hover:text-[#F7B32B] transition">Volunteer</a></li>
+                <li><a href="careers.html" class="hover:text-[#F7B32B] transition">Careers</a></li>
+                <li><a href="blog.html" class="hover:text-[#F7B32B] transition">Blog</a></li>
+                <li><a href="contact.html" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                <li>
+                    <a href="donate.html"
+                        class="bg-[#F7B32B] text-white px-5 py-2 rounded-full hover:bg-[#e6a419] transition font-bold">
+                        Donate
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+    <!-- Contact Section -->
+
+    <section id="contact" class="relative bg-gray-100">
+        <!-- Google Map -->
+        <div class="w-full h-[500px] lg:h-[400px]">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2312.928830826039!2d-1.3066408!3d54.57000600000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487e92e8acc28351%3A0x21f5aeb136eef38a!2sRhema%20House!5e0!3m2!1sen!2sng!4v1746551464524!5m2!1sen!2sng"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                class="w-full h-full"></iframe>
+        </div>
+
+        <!-- Overlay Contact Info -->
+        <div
+            class="absolute bottom-6 left-1/2 transform -translate-x-1/2 w-[92%] max-w-5xl bg-white bg-opacity-90 backdrop-blur-md rounded-2xl shadow-2xl p-8 md:p-10 z-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-[#2E7D32] mb-6 text-center">Get in Touch</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-gray-800">
+                <!-- Address -->
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-map-marker-alt text-[#2E7D32] text-2xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-lg">Address</p>
+                        <p>Rhema House, 2 Portrack Lane<br>Stockton-on-Tees, TS18 2HG<br>United Kingdom</p>
+                    </div>
+                </div>
+                <!-- Phone -->
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-phone-alt text-[#2E7D32] text-2xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-lg">Phone</p>
+                        <a href="tel:+447863240016" class="hover:underline block">+44 7863 240016</a>
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="flex items-start gap-4">
+                    <i class="fas fa-envelope text-[#2E7D32] text-2xl mt-1"></i>
+                    <div>
+                        <p class="font-semibold text-lg">Email</p>
+                        <a href="mailto:info@onecommunitylink.org"
+                            class="hover:underline block">info@onecommunitylink.org</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="bg-[#1B5E20] text-white pt-16 pb-8 relative z-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+                <!-- About -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">About Us</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        One Community Link empowers people by connecting them with education, support, and opportunity.
+                        Our mission is to build brighter futures—together.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="about.html" class="hover:text-[#F7B32B] transition">About</a></li>
+                        <li><a href="#impact" class="hover:text-[#F7B32B] transition">Impact</a></li>
+                        <li><a href="contact.html" class="hover:text-[#F7B32B] transition">Contact</a></li>
+                        <li><a href="donate.html" class="hover:text-[#F7B32B] transition">Donate</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fas fa-phone-alt mr-2 text-[#F7B32B]"></i> <a href="tel:+447863240016">+44 7863
+                                240016</a></li>
+                        <li><i class="fas fa-envelope mr-2 text-[#F7B32B]"></i> <a
+                                href="mailto:info@onecommunitylink.org">info@onecommunitylink.org</a></li>
+                        <li><i class="fas fa-map-marker-alt mr-2 text-[#F7B32B]"></i> Rhema House, Stockton-on-Tees</li>
+                    </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4 text-2xl">
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover:text-[#F7B32B] transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-white/20 mt-10 pt-6 text-center text-sm text-gray-400">
+                <p>&copy; 2025 One Community Link. All rights reserved.</p>
+                <div class="mt-2 space-x-4">
+                    <a href="#" class="hover:text-[#F7B32B] transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#F7B32B] transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="assets/js/app.js"></script>
+
+    <!-- Animate.css for smooth animation (optional, if you want) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+</body>
+
+</html>

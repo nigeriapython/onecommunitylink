@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - One Community Link</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f8fafc;
+    }
+    .sidebar {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .fade-in {
+      animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .nav-item {
+      transition: all 0.2s ease;
+    }
+    .nav-item:hover {
+      transform: translateX(5px);
+    }
+  </style>
+</head>
+<body class="text-gray-800 bg-gray-50">
+  <!-- Mobile Menu Button -->
+  <button id="mobileMenuButton" class="md:hidden fixed top-4 right-4 z-50 bg-[#2E7D32] text-white p-3 rounded-full shadow-lg">
+    <i class="fas fa-bars text-xl"></i>
+  </button>
+
+  <!-- Sidebar -->
+  <div class="flex min-h-screen">
+    <aside id="sidebar" class="sidebar w-64 bg-[#2E7D32] text-white fixed h-full md:relative transform -translate-x-full md:translate-x-0 z-40 transition-transform duration-300 ease-in-out flex flex-col">
+      <div class="px-6 py-4 text-2xl font-bold border-b border-[#4CAF50] flex items-center">
+        <i class="fas fa-user-shield mr-3"></i>
+        <span>Admin Panel</span>
+      </div>
+      
+      <!-- Logo -->
+      <div class="flex-shrink-0 p-4 bg-white flex justify-center">
+        <a href="index.html" class="hover:opacity-90 transition-opacity">
+          <img src="../assets/images/logo.png" alt="One Community Link Logo" class="h-16 w-auto">
+        </a>
+      </div>
+      
+      <nav class="flex-1 px-4 py-6 space-y-2">
+        <a href="#" class="nav-item flex items-center px-4 py-3 rounded-lg bg-[#4CAF50] text-white">
+          <i class="fas fa-tachometer-alt mr-3"></i>
+          <span>Dashboard</span>
+        </a>
+        <a href="#" class="nav-item flex items-center px-4 py-3 rounded-lg hover:bg-[#4CAF50] hover:text-white">
+          <i class="fas fa-hands-helping mr-3"></i>
+          <span>Volunteers</span>
+        </a>
+        <a href="#" class="nav-item flex items-center px-4 py-3 rounded-lg hover:bg-[#4CAF50] hover:text-white">
+          <i class="fas fa-envelope mr-3"></i>
+          <span>Messages</span>
+          <span class="ml-auto bg-yellow-400 text-gray-800 text-xs font-bold px-2 py-1 rounded-full">76</span>
+        </a>
+        <a href="#" class="nav-item flex items-center px-4 py-3 rounded-lg hover:bg-[#4CAF50] hover:text-white">
+          <i class="fas fa-donate mr-3"></i>
+          <span>Donations</span>
+        </a>
+        <a href="#" class="nav-item flex items-center px-4 py-3 rounded-lg hover:bg-[#4CAF50] hover:text-white">
+          <i class="fas fa-users mr-3"></i>
+          <span>Users</span>
+        </a>
+        <a href="#" class="nav-item flex items-center px-4 py-3 rounded-lg hover:bg-[#4CAF50] hover:text-white">
+          <i class="fas fa-cog mr-3"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+      
+      <div class="px-6 py-4 border-t border-[#4CAF50]">
+        <button class="w-full bg-red-500 hover:bg-red-600 text-white py-2 rounded-lg flex items-center justify-center transition-colors">
+          <i class="fas fa-sign-out-alt mr-2"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6 md:ml-64 fade-in">
+      <div class="flex items-center justify-between mb-8">
+        <div>
+          <h1 class="text-2xl md:text-3xl font-bold text-gray-800">Welcome back, Admin</h1>
+          <p class="text-gray-600 mt-1">Here's what's happening with your community today</p>
+        </div>
+        <div class="flex items-center space-x-3">
+          <div class="relative">
+            <i class="fas fa-bell text-gray-500 text-xl hover:text-[#2E7D32] cursor-pointer"></i>
+            <span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-4 w-4 flex items-center justify-center">3</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-2 bg-white p-2 rounded-lg shadow-sm cursor-pointer hover:bg-gray-50">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="h-8 w-8 rounded-full">
+            <span class="text-sm font-medium">Admin User</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="card-hover bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm font-medium">Volunteers</p>
+              <h3 class="text-2xl font-bold mt-1">128</h3>
+              <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 12% from last month</p>
+            </div>
+            <div class="bg-green-100 p-3 rounded-full">
+              <i class="fas fa-hands-helping text-green-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-hover bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm font-medium">Donations</p>
+              <h3 class="text-2xl font-bold mt-1">$4,230</h3>
+              <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 8% from last month</p>
+            </div>
+            <div class="bg-blue-100 p-3 rounded-full">
+              <i class="fas fa-donate text-blue-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-hover bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm font-medium">Messages</p>
+              <h3 class="text-2xl font-bold mt-1">76</h3>
+              <p class="text-red-500 text-xs mt-2"><i class="fas fa-arrow-down mr-1"></i> 5% from last month</p>
+            </div>
+            <div class="bg-yellow-100 p-3 rounded-full">
+              <i class="fas fa-envelope text-yellow-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="card-hover bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm font-medium">Site Visits</p>
+              <h3 class="text-2xl font-bold mt-1">2,304</h3>
+              <p class="text-green-500 text-xs mt-2"><i class="fas fa-arrow-up mr-1"></i> 24% from last month</p>
+            </div>
+            <div class="bg-purple-100 p-3 rounded-full">
+              <i class="fas fa-chart-line text-purple-600 text-xl"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Volunteers Table -->
+      <div class="mt-10 bg-white p-6 rounded-xl shadow-sm border border-gray-100 fade-in">
+        <div class="flex flex-col md:flex-row items-center justify-between mb-6">
+          <h2 class="text-xl font-semibold mb-4 md:mb-0 flex items-center">
+            <i class="fas fa-hands-helping mr-2 text-[#2E7D32]"></i>
+            Volunteers
+          </h2>
+          <div class="relative w-full md:w-1/3">
+            <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+            <input type="text" id="volunteerSearch" placeholder="Search volunteers..." class="pl-10 pr-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-[#2E7D32] focus:border-transparent" />
+          </div>
+        </div>
+        
+        <div class="overflow-x-auto rounded-lg border border-gray-200">
+          <table class="w-full text-left">
+            <thead class="bg-[#2E7D32] text-white">
+              <tr>
+                <th class="py-3 px-4 font-medium">Name</th>
+                <th class="py-3 px-4 font-medium">Email</th>
+                <th class="py-3 px-4 font-medium">Phone</th>
+                <th class="py-3 px-4 font-medium">Status</th>
+                <th class="py-3 px-4 font-medium text-right">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="volunteerTable" class="divide-y divide-gray-200">
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 flex items-center">
+                  <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Jane Doe" class="h-8 w-8 rounded-full mr-3">
+                  <span>Jane Doe</span>
+                </td>
+                <td class="py-3 px-4">jane@example.com</td>
+                <td class="py-3 px-4">+123456789</td>
+                <td class="py-3 px-4">
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Active</span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-2">
+                  <button class="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded-lg text-white transition-colors">
+                    <i class="fas fa-edit mr-1"></i> Edit
+                  </button>
+                  <button class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded-lg text-white transition-colors">
+                    <i class="fas fa-trash mr-1"></i> Delete
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 flex items-center">
+                  <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Smith" class="h-8 w-8 rounded-full mr-3">
+                  <span>John Smith</span>
+                </td>
+                <td class="py-3 px-4">john@example.com</td>
+                <td class="py-3 px-4">+987654321</td>
+                <td class="py-3 px-4">
+                  <span class="bg-yellow-100 text-yellow-800 text-xs px-2 py-1 rounded-full">Pending</span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-2">
+                  <button class="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded-lg text-white transition-colors">
+                    <i class="fas fa-edit mr-1"></i> Edit
+                  </button>
+                  <button class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded-lg text-white transition-colors">
+                    <i class="fas fa-trash mr-1"></i> Delete
+                  </button>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 transition-colors">
+                <td class="py-3 px-4 flex items-center">
+                  <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sarah Johnson" class="h-8 w-8 rounded-full mr-3">
+                  <span>Sarah Johnson</span>
+                </td>
+                <td class="py-3 px-4">sarah@example.com</td>
+                <td class="py-3 px-4">+112233445</td>
+                <td class="py-3 px-4">
+                  <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Active</span>
+                </td>
+                <td class="py-3 px-4 text-right space-x-2">
+                  <button class="bg-blue-500 hover:bg-blue-600 px-3 py-1 rounded-lg text-white transition-colors">
+                    <i class="fas fa-edit mr-1"></i> Edit
+                  </button>
+                  <button class="bg-red-500 hover:bg-red-600 px-3 py-1 rounded-lg text-white transition-colors">
+                    <i class="fas fa-trash mr-1"></i> Delete
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="flex justify-between items-center mt-4">
+          <div class="text-sm text-gray-500">
+            Showing <span class="font-medium">1</span> to <span class="font-medium">3</span> of <span class="font-medium">128</span> volunteers
+          </div>
+          <div class="flex space-x-2">
+            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100 transition-colors">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="px-3 py-1 border rounded-lg bg-[#2E7D32] text-white">1</button>
+            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100 transition-colors">2</button>
+            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100 transition-colors">3</button>
+            <button class="px-3 py-1 border rounded-lg hover:bg-gray-100 transition-colors">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Volunteer Form -->
+      <div class="mt-10 bg-white p-6 rounded-xl shadow-sm border border-gray-100 fade-in">
+        <h2 class="text-xl font-semibold mb-4 flex items-center">
+          <i class="fas fa-user-plus mr-2 text-[#2E7D32]"></i>
+          Add Volunteer
+        </h2>
+        
+        <form id="volunteerForm" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="relative">
+            <i class="fas fa-user absolute left-3 top-3 text-gray-400"></i>
+            <input type="text" placeholder="Full Name" class="pl-10 pr-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-[#2E7D32] focus:border-transparent" required />
+          </div>
+          
+          <div class="relative">
+            <i class="fas fa-envelope absolute left-3 top-3 text-gray-400"></i>
+            <input type="email" placeholder="Email" class="pl-10 pr-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-[#2E7D32] focus:border-transparent" required />
+          </div>
+          
+          <div class="relative">
+            <i class="fas fa-phone absolute left-3 top-3 text-gray-400"></i>
+            <input type="tel" placeholder="Phone" class="pl-10 pr-4 py-2 border rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-[#2E7D32] focus:border-transparent" required />
+          </div>
+          
+          <div class="md:col-span-3">
+            <button type="submit" class="bg-[#2E7D32] hover:bg-[#1B5E20] text-white px-6 py-2 rounded-lg transition-colors flex items-center justify-center">
+              <i class="fas fa-plus mr-2"></i>
+              Add Volunteer
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    $('#mobileMenuButton').click(function() {
+      $('#sidebar').toggleClass('-translate-x-full');
+    });
+
+    // Volunteer search functionality
+    $('#volunteerSearch').on('input', function() {
+      const value = $(this).val().toLowerCase();
+      $('#volunteerTable tr').filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+      });
+    });
+
+    // Form submission
+    $('#volunteerForm').on('submit', function(e) {
+      e.preventDefault();
+      // Show success message
+      const successMsg = $(`
+        <div class="fixed bottom-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg flex items-center animate-fade-in">
+          <i class="fas fa-check-circle mr-2"></i>
+          Volunteer added successfully!
+        </div>
+      `);
+      $('body').append(successMsg);
+      
+      // Remove after 3 seconds
+      setTimeout(() => {
+        successMsg.fadeOut(500, () => successMsg.remove());
+      }, 3000);
+      
+      this.reset();
+    });
+
+    // Add animation to cards on page load
+    $('.card-hover').each(function(index) {
+      $(this).css('animation-delay', `${index * 0.1}s`);
+    });
+  </script>
+</body>
+</html>
